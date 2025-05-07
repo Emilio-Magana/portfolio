@@ -123,32 +123,6 @@ app.post("/api/chat", async (req: Request, res: Response) => {
       chat_history: chatHistory,
     });
 
-    // // Stream response to client
-    // res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    // res.setHeader("Transfer-Encoding", "chunked");
-
-    // // stream.pipe(res);
-    // // Get the reader from the stream
-    // const reader = stream.getReader();
-    // const encoder = new TextEncoder();
-
-    // // Read the stream and write chunks to the response
-    // const pump = async () => {
-    //   while (true) {
-    //     const { done, value } = await reader.read();
-    //     if (done) break;
-
-    //     // Write each chunk to the response
-    //     res.write(encoder.encode(value.answer)); // Or whatever part of the value you want to send
-    //   }
-    //   res.end(); // End the response when done
-    // };
-
-    // pump(); // Start pumping the stream to the response
-    // // What was shown in oringal example
-
-    // return new StreamingTextResponse(stream);
-    // Use Node's stream piping for Express
     res.setHeader("Content-Type", "text/event-stream");
     res.setHeader("Cache-Control", "no-cache");
     res.setHeader("Connection", "keep-alive");
