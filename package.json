@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "client-build": "tsc -b && vite build",
-    "server-build": "tsc",
+    "server-build": "npx tsx ./api/chat/index.ts",
     "build": "npm run client-build && npm run server-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
