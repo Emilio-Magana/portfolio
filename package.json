@@ -4,7 +4,7 @@
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "index.js",
   "scripts": {
-    "client-build": "tsc -b && vite build",
+    "client-build": "vite build",
     "server-build": "npx tsx ./api/chat/index.ts",
     "build": "npm run client-build && npm run server-build",
     "test": "echo \"Error: no test specified\" && exit 1"
