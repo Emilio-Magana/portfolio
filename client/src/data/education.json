@@ -1,0 +1,17 @@
+{
+  "education": [
+    {
+      "name": "Oregon State University",
+      "href": "https://oregonstate.edu/",
+      "title": "Bachelor of Science in Electrical and Computer Engineering",
+      "logo": "OSU",
+      "start": "Sep 2017",
+      "end": "June 2021",
+      "description": [
+        "GPA: 3.52/4.0",
+        "Graduated with a Minor in Computer Science",
+        "Related Coursework: Digital Logic Design, VLSI, CMOS, Computer Architecture, Signal and Systems"
+      ]
+    }
+  ]
+}

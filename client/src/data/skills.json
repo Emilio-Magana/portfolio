@@ -1,0 +1,44 @@
+{
+  "skills": [
+    {
+      "name": "TailwindCSS",
+      "hover_color": "hover:text-cyan-400",
+      "size": "medium"
+    },
+    {
+      "name": "TypeScript",
+      "hover_color": "hover:text-[#007acc]",
+      "size": "small"
+    },
+    {
+      "name": "Python",
+      "hover_color": "hover:text-yellow-300",
+      "size": "small"
+    },
+    {
+      "name": "ReactJs",
+      "hover_color": "hover:text-cyan-300",
+      "size": "small"
+    },
+    {
+      "name": "CSS",
+      "hover_color": "hover:text-[#264de4]",
+      "size": "small"
+    },
+    {
+      "name": "Go",
+      "hover_color": "hover:text-[#00ADD8]",
+      "size": "large"
+    },
+    {
+      "name": "R",
+      "hover_color": "hover:text-blue-300",
+      "size": "small"
+    },
+    {
+      "name": "Supabase",
+      "hover_color": "hover:text-green-500",
+      "size": "small"
+    }
+  ]
+}

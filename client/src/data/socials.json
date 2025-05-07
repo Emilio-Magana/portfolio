@@ -1,0 +1,19 @@
+{
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/in/me-emilio-maga%C3%B1a/",
+      "size": "small"
+    },
+    {
+      "name": "GitHub",
+      "href": "https://github.com/Emilio-Magana",
+      "size": "small"
+    },
+    {
+      "name": "Email",
+      "href": "mailto:magana.emil.a@gmail.com",
+      "size": "small"
+    }
+  ]
+}

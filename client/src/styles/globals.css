@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    background-color: #ddd9cd;
+
+    --backgroundFadeB: #9c9990;
+    --backgroundFadeE: #fef9eb;
+
+    --activeTab: #fef9eb;
+    --componentBg: #11121a;
+    --skillTileBg: #f6edd6;
+    --logoBg: #fef9eb;
+    --resumeBg: #11121a;
+
+    --primary: #454f8a;
+    --secondary: #17244f;
+    --tertiary: #11121a;
+    --opposite: #eeeeee;
+    --nonActive: #eab308;
+
+    --skillBr: #9b8b74;
+    --cardBr: #0284c7;
+    --botBr: #0284c7;
+
+    --resumeHov: #eeeeee;
+    --socialHov: #0284c7;
+    --hover: #111111;
+
+    --particleC: #7393b3;
+  }
+
+  .dark {
+    background-color: #090f20;
+
+    --backgroundFadeB: #192238;
+    --backgroundFadeE: #010614;
+
+    --activeTab: #010614;
+    --componentBg: #111827;
+    --skillTileBg: #111827;
+    --logoBg: #ca8a04;
+    --resumeBg: #010614;
+
+    --opposite: #111111;
+    --primary: #64748b;
+    --secondary: #b3c2da;
+    --tertiary: #e5e8ee;
+    --nonActive: #eab308;
+
+    --skillBr: #64748b;
+    --cardBr: #0284c7;
+    --botBr: #0284c7;
+
+    --resumeHov: #eeeeee;
+    --socialHov: #eeeeee;
+    --hover: #eeeeee;
+
+    --particleC: #7393b3;
+  }
+}
+/* .stagger-fade:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-fade:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-fade:nth-child(3) {
+  animation-delay: 0.3s;
+} */

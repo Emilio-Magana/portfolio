@@ -1,0 +1,21 @@
+.particle {
+  position: absolute;
+  background: #b23181;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: move linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(190vh)
+      translateX(calc(-50vw + 100vw * var(--random-x)));
+    opacity: 0.2;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "name": "Portfolio Website",
+      "description": "Website that serves as a self introduction and as root to all my socials, and future projects",
+      "image": "/websiteDarkSnippet.png",
+      "imageAlt": "/websiteLightSnippet.png",
+      "tags": ["TypeScript", "ReactJs", "TailwindCSS", "Wouter"],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/Emilio-Magana/Emilio-Magana.github.io",
+          "size": "xsmall"
+        },
+        {
+          "name": "Website",
+          "href": "http://emilio-magana.github.io",
+          "size": "xsmall"
+        }
+      ]
+    },
+    {
+      "name": "High Voltage Peripherals",
+      "description": "Capstone Project was done with the Global Formula Racing (GFR) Team at Oregon State, a International Formula Student team in conjunction with DHBW Ravensburg, as part of the ePowertrain sub-team. Designed and Functionally tested the DC-Link (DCL) and Brake System Plausibility Device (BSPD) for both FS and FSAE 2021 Competitions.",
+      "image": "/GFR-logo.png",
+      "tags": ["Eagle CAD", "LTspice", "Digital Logic Design"],
+      "links": [
+        {
+          "name": "Website",
+          "href": "https://www.global-formula-racing.com/en/",
+          "size": "xsmall"
+        }
+      ]
+    }
+  ]
+}
