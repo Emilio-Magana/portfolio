@@ -1,10 +1,10 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Made a root ",
   "main": "index.js",
   "scripts": {
-    "client-build": "vite build",
+    "client-build": "cd client && npm install && npm run build",
     "server-build": "npx tsx ./api/chat/index.ts",
     "build": "npm run client-build && npm run server-build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +17,6 @@
     "@types/node": "^22.15.12"
   },
   "dependencies": {
-    "dotenv": "^16.5.0",
-    "vite": "^6.2.0"
+    "dotenv": "^16.5.0"
   }
 }
