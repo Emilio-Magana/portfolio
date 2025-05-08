@@ -9,19 +9,21 @@ import {
 } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { Redis } from "@upstash/redis";
+import { VercelRequest } from "@vercel/node";
 import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 
-export default async function handler(req: Request) {
+export default async function handler(req: VercelRequest) {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
     });
   }
   try {
-    const body = (await req.json()) as { messages: Message[] };
+    // const body = (await req.json()) as { messages: Message[] };
+    const body = req.body;
     const messages = body.messages;
 
     const latestMessage = messages[messages.length - 1].content;
@@ -49,7 +51,7 @@ export default async function handler(req: Request) {
 
     const chatHistory = messages
       .slice(0, -1)
-      .map((msg) =>
+      .map((msg: Message) =>
         msg.role === "user"
           ? new HumanMessage(msg.content)
           : new AIMessage(msg.content)
