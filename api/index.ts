@@ -1,4 +1,4 @@
-export const runtime = "edge";
+export const runtime = "nodejs";
 import { getVectorStore } from "./config/vectordb";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
