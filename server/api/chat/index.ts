@@ -19,9 +19,14 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 import { Readable } from "node:stream";
 
 const app = express();
-const PORT = 3000;
+// const PORT = 3000;
 
-app.use(cors({ origin: "http://localhost:5173", methods: ["POST"] }));
+app.use(
+  cors({
+    origin: "https://portfolio-two-rust-85.vercel.app/",
+    methods: ["POST"],
+  })
+);
 app.use(bodyParser.json());
 
 app.post("/api/chat", async (req: Request, res: Response) => {
@@ -134,6 +139,6 @@ app.post("/api/chat", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running at http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server is running at http://localhost:${PORT}`);
+// });
