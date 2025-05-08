@@ -58,9 +58,9 @@ const colorMap = {
 };
 
 const sectionStyle: string =
-  "grid grid-cols-4 animate-fade-in-up opacity-0 bg-transparent gap-1 place-self-center cursor-[url(../assets/circle-outline.svg)_12_24,_auto] my-8 px-1 w-full ";
+  "grid grid-cols-4 animate-fade-in-up opacity-0 bg-transparent gap-1 place-self-center cursor-[url(/circle-outline.svg)_12_24,_auto] my-8 px-1 w-full ";
 const btnStyle: string =
-  "rounded-lg border border-skillBr h-[70px] duration-100 ease-in-out hover:bg-skillTileBg group cursor-[url(../assets/circle-outline.svg)_12_24,_auto] pt-1 ";
+  "rounded-lg border border-skillBr h-[70px] duration-100 ease-in-out hover:bg-skillTileBg group cursor-[url(/circle-outline.svg)_12_24,_auto] pt-1 ";
 const iconStyle: string =
   "inline-block transform duration-150 group-hover:-translate-y-2";
 const nameStyle: string = "text-xs text-primary mt-[1px]";
