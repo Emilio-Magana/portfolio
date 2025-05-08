@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "client-build": "cd client && npm install && npm run build",
-    "api-build": "tsc -p api",
+    "api-build": "tsc -b api",
     "build": "npm run client-build && npm run api-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
