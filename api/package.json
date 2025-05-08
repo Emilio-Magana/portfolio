@@ -4,7 +4,6 @@
   "description": "chatbot api",
   "main": "index.ts",
   "scripts": {
-    "test": "node ./index.ts",
     "dev": "npx tsx ./index.ts",
     "build": "tsc"
   },
