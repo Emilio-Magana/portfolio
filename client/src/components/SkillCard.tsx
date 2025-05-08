@@ -15,6 +15,8 @@ export default function SkillCard({ name, hover_color, size }: Skill) {
   let padding: string = " pt-1 ";
   if (name === "Go") padding = " pb-2 ";
 
+  console.log(name, hover_color);
+
   return (
     <button className={btnStyle + hover_color} key={name}>
       <SkillIcon size={iconSize} className={iconStyle} />
