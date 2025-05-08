@@ -10,6 +10,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
     // "types": ["node"],
     /* */
 
@@ -28,5 +29,5 @@
     "noUncheckedSideEffectImports": true
   },
   // "include": ["../client/vite.config.ts"]
-  "include": ["./**/*.ts"]
+  "include": ["./**/*"]
 }
