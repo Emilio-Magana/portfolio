@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "client-build": "cd client && npm install && npm run build",
-    "server-build": "tsc -b",
-    "build": "npm run client-build && npm run server-build",
+    "api-build": "tsc -p api/ --outDir dist-api",
+    "build": "npm run client-build && npm run api-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
