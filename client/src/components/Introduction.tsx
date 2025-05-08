@@ -42,7 +42,7 @@ export default function Introduction() {
         </div>
       </article>
       <div className="-mt-10 flex gap-8">
-        <a href="/client/public/resume.pdf" target="_blank">
+        <a href="/resume.pdf" target="_blank">
           <button className="group h-10 w-28 rounded-lg border bg-resumeBg text-nonActive duration-500 ease-in-out hover:text-resumeHov">
             <span className="font-semibold">Resume</span>
             <FaFileDownload
