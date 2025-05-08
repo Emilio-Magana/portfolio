@@ -3,7 +3,7 @@ import { Icons } from "../config/icons";
 import { Skill } from "../config/schema";
 
 const btnStyle: string =
-  "rounded-lg border border-skillBr h-[70px] duration-100 ease-in-out hover:bg-skillTileBg group cursor-[url(/client/public/circle-outline.svg)_12_24,_auto] pt-1 ";
+  "rounded-lg border border-skillBr h-[70px] duration-100 ease-in-out hover:bg-skillTileBg group cursor-[url(/circle-outline.svg)_12_24,_auto] pt-1 ";
 const iconStyle: string =
   "inline-block transform duration-150 group-hover:-translate-y-2";
 const nameStyle: string = "text-xs text-primary mt-[1px]";
@@ -14,19 +14,10 @@ export default function SkillCard({ name, hover_color, size }: Skill) {
 
   let padding: string = " pt-1 ";
   if (name === "Go") padding = " pb-2 ";
-  // let animation: boolean = false;
-  // if (name === "ReactJs") {
-  //   animation = true;
-  //   console.log(iconStyle + animation);
-  // }
 
   return (
     <button className={btnStyle + hover_color} key={name}>
-      <SkillIcon
-        size={iconSize}
-        className={iconStyle}
-        // style={{ transform: animation ? "rotate(0deg)" : "rotate(360deg)" }}
-      />
+      <SkillIcon size={iconSize} className={iconStyle} />
       <p className={nameStyle + padding}>{name}</p>
     </button>
   );
