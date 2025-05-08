@@ -7,7 +7,7 @@ export default defineConfig({
   base: process.env.VITE_BASE_PATH || "/portfolio",
   server: {
     proxy: {
-      '/api': 'https://portfolio-two-rust-85.vercel.app/',
+      '/api': 'http://localhost:3000',
     },
   },
 })

@@ -1,4 +1,4 @@
-import { VercelRequest, VercelResponse } from "@vercel/node";
+export const runtime = "edge";
 import { getVectorStore } from "./config/vectordb";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
@@ -9,18 +9,21 @@ import {
 } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { Redis } from "@upstash/redis";
-import { LangChainStream, Message } from "ai";
+import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
-import { Readable } from "node:stream";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: Request) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+    });
   }
   try {
-    const messages: Message[] = req.body.messages;
+    const body = (await req.json()) as { messages: Message[] };
+    const messages = body.messages;
+
     const latestMessage = messages[messages.length - 1].content;
     const { stream, handlers } = LangChainStream();
 
@@ -94,13 +97,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       chat_history: chatHistory,
     });
 
-    res.setHeader("Content-Type", "text/event-stream");
-    res.setHeader("Cache-Control", "no-cache");
-    res.setHeader("Connection", "keep-alive");
-
-    Readable.fromWeb(stream).pipe(res);
+    return new StreamingTextResponse(stream);
   } catch (error) {
-    console.error("Error in /api/chat:", error);
-    return res.status(500).json({ error: "Internal server error" });
+    console.error("Error in /api:", error);
+
+    return new Response(JSON.stringify({ error: "Internal server error" }), {
+      status: 500,
+    });
   }
 }
