@@ -1,7 +1,4 @@
-import express, { Request, Response } from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-
+import { VercelRequest, VercelResponse } from "@vercel/node";
 import { getVectorStore } from "./config/vectordb";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
@@ -18,36 +15,18 @@ import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retr
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { Readable } from "node:stream";
 
-const app = express();
-
-const PORT = 3000;
-// const PORT = https://portfolio-two-rust-85.vercel.app/;
-
-app.use(
-  cors({
-    origin: "https://portfolio-two-rust-85.vercel.app/",
-    // origin: "https://localhost:5173",
-    methods: ["POST"],
-  })
-);
-app.use(bodyParser.json());
-
-app.post("/", async (req: Request, res: Response) => {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
   try {
     const messages: Message[] = req.body.messages;
     const latestMessage = messages[messages.length - 1].content;
-
-    // Initialize LangChain stream
     const { stream, handlers } = LangChainStream();
 
-    // Redis caching
     const cache = new UpstashRedisCache({
       client: Redis.fromEnv(),
     });
-
-    console.log(Redis.fromEnv());
-
-    // Streaming chat model
     const chatModel = new ChatOpenAI({
       model: "gpt-3.5-turbo-0125",
       streaming: true,
@@ -56,18 +35,14 @@ app.post("/", async (req: Request, res: Response) => {
       cache,
       temperature: 0,
     });
-
-    // Rephrase model (non-streaming)
     const rephraseModel = new ChatOpenAI({
       model: "gpt-3.5-turbo-0125",
       verbose: true,
       cache,
     });
 
-    // Load vector store retriever
     const retriever = (await getVectorStore()).asRetriever();
 
-    // Format chat history
     const chatHistory = messages
       .slice(0, -1)
       .map((msg) =>
@@ -75,8 +50,6 @@ app.post("/", async (req: Request, res: Response) => {
           ? new HumanMessage(msg.content)
           : new AIMessage(msg.content)
       );
-
-    // Prompt to rephrase into search query
     const rephrasePrompt = ChatPromptTemplate.fromMessages([
       new MessagesPlaceholder("chat_history"),
       ["user", "{input}"],
@@ -86,16 +59,11 @@ app.post("/", async (req: Request, res: Response) => {
           "Do not leave out any relevant keywords. Only return the query and no other text.",
       ],
     ]);
-
-    // Use history-aware retriever
-
     const historyAwareRetrievalChain = await createHistoryAwareRetriever({
       llm: rephraseModel,
       retriever,
       rephrasePrompt,
     });
-
-    // Final system prompt
     const prompt = ChatPromptTemplate.fromMessages([
       [
         "system",
@@ -109,8 +77,6 @@ app.post("/", async (req: Request, res: Response) => {
       new MessagesPlaceholder("chat_history"),
       ["user", "{input}"],
     ]);
-
-    // Build chain that combines retrieved docs
     const combineDocsChain = await createStuffDocumentsChain({
       llm: chatModel,
       prompt,
@@ -119,13 +85,10 @@ app.post("/", async (req: Request, res: Response) => {
       ),
       documentSeparator: "\n------\n",
     });
-
-    // Create retrieval + answer chain
     const retrievalChain = await createRetrievalChain({
       combineDocsChain,
       retriever: historyAwareRetrievalChain,
     });
-
     await retrievalChain.invoke({
       input: latestMessage,
       chat_history: chatHistory,
@@ -138,10 +101,6 @@ app.post("/", async (req: Request, res: Response) => {
     Readable.fromWeb(stream).pipe(res);
   } catch (error) {
     console.error("Error in /api/chat:", error);
-    res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error" });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running at http://localhost:${PORT}`);
-});
+}
