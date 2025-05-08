@@ -1,4 +1,4 @@
-import pfp from "../assets/profile_pic.png";
+import pfp from "/profile_pic.png";
 import Socials from "./Socials";
 import { FaFileDownload } from "react-icons/fa";
 import { CgArrowsExpandDownRight } from "react-icons/cg";
@@ -42,7 +42,7 @@ export default function Introduction() {
         </div>
       </article>
       <div className="-mt-10 flex gap-8">
-        <a href="/src/assets/resume.pdf" target="_blank">
+        <a href="/client/public/resume.pdf" target="_blank">
           <button className="group h-10 w-28 rounded-lg border bg-resumeBg text-nonActive duration-500 ease-in-out hover:text-resumeHov">
             <span className="font-semibold">Resume</span>
             <FaFileDownload

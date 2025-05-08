@@ -1,12 +1,12 @@
 // import Socials from "./Socials";
 import { Link } from "wouter";
-import mountain from "../assets/icons8-mountain-96.png";
+// import mountain from "../assets/icons8-mountain-96.png";
+import mountain from "/icons8-mountain-96.png";
 
 export default function Footer() {
   return (
-    <footer className="ipad_mini:flex-row-reverse ipad_mini:justify-between my-8 flex flex-col justify-center place-self-center">
+    <footer className="my-8 flex flex-col justify-center place-self-center ipad_mini:flex-row-reverse ipad_mini:justify-between">
       {/* <Socials /> */}
-      {/* <section className="my-8"> */}
       <p className="text-muted-foreground text-xs">
         &copy;{new Date().getFullYear()} Emilio Maga&ntilde;a
         {" | "}
@@ -23,7 +23,6 @@ export default function Footer() {
           from icons8.com
         </a>
       </p>
-      {/* </section> */}
     </footer>
   );
 }
