@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "node ./api/chat/index.ts",
-    "dev": "npx tsx ./api/chat/index.ts",
+    "test": "node ./index.ts",
+    "dev": "npx tsx ./index.ts",
     "build": "tsc"
   },
   "keywords": [],

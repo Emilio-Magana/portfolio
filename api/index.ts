@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import { getVectorStore } from "../../config/vectordb";
+import { getVectorStore } from "./config/vectordb";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
 import {
@@ -19,17 +19,20 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 import { Readable } from "node:stream";
 
 const app = express();
-// const PORT = 3000;
+
+const PORT = 3000;
+// const PORT = https://portfolio-two-rust-85.vercel.app/;
 
 app.use(
   cors({
     origin: "https://portfolio-two-rust-85.vercel.app/",
+    // origin: "https://localhost:5173",
     methods: ["POST"],
   })
 );
 app.use(bodyParser.json());
 
-app.post("/api/chat", async (req: Request, res: Response) => {
+app.post("/", async (req: Request, res: Response) => {
   try {
     const messages: Message[] = req.body.messages;
     const latestMessage = messages[messages.length - 1].content;
@@ -139,6 +142,6 @@ app.post("/api/chat", async (req: Request, res: Response) => {
   }
 });
 
-// app.listen(PORT, () => {
-//   console.log(`🚀 Server is running at http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running at http://localhost:${PORT}`);
+});

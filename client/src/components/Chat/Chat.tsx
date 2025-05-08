@@ -92,7 +92,7 @@ export default function Chat() {
     setMessages,
     status,
     error,
-  } = useChat({api: "/api/chat"});
+  } = useChat({api: "/api"});
 
   return (
     <div className="fixed z-40 flex flex-col transition-all duration-300 ipad_mini:right-7 phone:right-3 phone:bottom-3 ipad_mini:bottom-7">
