@@ -14,7 +14,7 @@ if (!endpoint || !token || !collection) {
   throw new Error("Please set environment variables for Astra DB!");
 }
 
-export async function getVectorStore() {
+export default async function getVectorStore() {
   return AstraDBVectorStore.fromExistingIndex(
     new OpenAIEmbeddings({ model: "text-embedding-3-small" }),
     {

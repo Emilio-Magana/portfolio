@@ -1,5 +1,5 @@
 export const runtime = "edge";
-import { getVectorStore } from "./config/vectordb";
+import getVectorStore from "./config/vectordb";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
 import {
@@ -30,6 +30,7 @@ export default async function handler(req: Request) {
     const cache = new UpstashRedisCache({
       client: Redis.fromEnv(),
     });
+
     const chatModel = new ChatOpenAI({
       model: "gpt-3.5-turbo-0125",
       streaming: true,
