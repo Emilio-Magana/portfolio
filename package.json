@@ -7,7 +7,7 @@
   "scripts": {
     "front-dev": "vite",
     "back-dev": "npx tsx ./index.ts",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b ./src/api/index.ts && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
