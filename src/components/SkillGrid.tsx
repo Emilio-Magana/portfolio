@@ -1,6 +1,7 @@
 // import skillData from "../data/skills.json";
 // import { skillSchema } from "../config/schema";
 // import SkillCard from "./SkillCard";
+// // emxgjood4 was the formerly working deployment. come back and figure out what went wrong
 
 // const skills = skillSchema.parse(skillData).skills;
 

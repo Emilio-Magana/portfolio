@@ -1,5 +1,5 @@
 export const runtime = "nodejs";
-import { getVectorStore } from "./config/vectordb.js";
+import { getVectorStore } from "../config/vectordb.js";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
 import {
@@ -54,7 +54,7 @@ export default async function handler(req: VercelRequest) {
       .map((msg: Message) =>
         msg.role === "user"
           ? new HumanMessage(msg.content)
-          : new AIMessage(msg.content)
+          : new AIMessage(msg.content),
       );
     const rephrasePrompt = ChatPromptTemplate.fromMessages([
       new MessagesPlaceholder("chat_history"),
@@ -87,7 +87,7 @@ export default async function handler(req: VercelRequest) {
       llm: chatModel,
       prompt,
       documentPrompt: PromptTemplate.fromTemplate(
-        "Page content:\n{page_content}"
+        "Page content:\n{page_content}",
       ),
       documentSeparator: "\n------\n",
     });
