@@ -7,13 +7,13 @@ import { useEffect, useRef } from "react";
 interface MessagesProps {
   messages: Message[];
   error: Error | undefined;
-  status: "submitted" | "streaming" | "ready" | "error";
+  isLoading: boolean;
 }
 
 export default function ChatMessages({
   messages,
   error,
-  status,
+  isLoading,
 }: MessagesProps) {
   const isLastMessageUser = messages[messages.length - 1]?.role === "user";
 
@@ -29,7 +29,7 @@ export default function ChatMessages({
 
   return (
     <div
-      className="border-skillBr h-full overflow-y-auto border-t p-3"
+      className="h-full overflow-y-auto border-t border-skillBr p-3"
       ref={scrollRef}
     >
       <ul>
@@ -53,17 +53,16 @@ export default function ChatMessages({
       )}
 
       {/* loading */}
-      {(status === "submitted" || status === "streaming") &&
-        isLastMessageUser && (
-          <div className="flex items-center justify-center">
-            {status === "submitted" && (
-              <TbLoader3 className="text-muted-foreground mr-1.5 size-3 animate-spin" />
-            )}
-            <p className="text-muted-foreground text-center text-xs">
-              Thinking...
-            </p>
-          </div>
-        )}
+      {isLoading && isLastMessageUser && (
+        <div className="flex items-center justify-center">
+          {status === "submitted" && (
+            <TbLoader3 className="text-muted-foreground mr-1.5 size-3 animate-spin" />
+          )}
+          <p className="text-muted-foreground text-center text-xs">
+            Thinking...
+          </p>
+        </div>
+      )}
 
       {/* error */}
       {error && (

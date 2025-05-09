@@ -29,7 +29,7 @@
 //     const userMessage : Message = {
 //       role: "user",
 //       content: input,
-//       id: Date.now().toString(), 
+//       id: Date.now().toString(),
 //     };
 
 //     // Add the user's message to the current messages
@@ -45,7 +45,7 @@
 //       const aiMessage : Message = {
 //         role: "assistant",
 //         content: response.data.answer,  // Adjust based on your backend response structure
-//         id: Date.now().toString(), 
+//         id: Date.now().toString(),
 //       };
 //       setMessages((prevMessages) => [...prevMessages, aiMessage]);
 //       setInput("");
@@ -62,7 +62,7 @@
 //           <ChatInput
 //             // input={input}
 //             input={input}
-//             // handleSubmit={handleSubmit} //previous 
+//             // handleSubmit={handleSubmit} //previous
 //             handleSubmit={updatedHandleSubmit}
 //             handleInputChange={handleInputChange}
 //             setMessages={setMessages}
@@ -80,7 +80,6 @@ import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";
 import Accordion from "../../ui/Accordion";
 
-
 export default function Chat() {
   const { isVisible } = useChatBot();
   const {
@@ -90,18 +89,22 @@ export default function Chat() {
     handleInputChange,
     handleSubmit,
     setMessages,
-    status,
+    isLoading,
     error,
-  } = useChat({api: "/api"});
+  } = useChat({ api: "/api" });
 
   return (
-    <div className="fixed z-40 flex flex-col transition-all duration-300 ipad_mini:right-7 phone:right-3 phone:bottom-3 ipad_mini:bottom-7">
+    <div className="fixed z-40 flex flex-col transition-all duration-300 phone:bottom-3 phone:right-3 ipad_mini:bottom-7 ipad_mini:right-7">
       {isVisible && (
         <Accordion>
-          <ChatMessages messages={messages} error={error} status={status} />
+          <ChatMessages
+            messages={messages}
+            error={error}
+            isLoading={isLoading}
+          />
           <ChatInput
             input={input}
-            setInput= {setInput}
+            setInput={setInput}
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
             setMessages={setMessages}
@@ -112,4 +115,3 @@ export default function Chat() {
     </div>
   );
 }
-
