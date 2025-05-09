@@ -1,5 +1,5 @@
 export const runtime = "nodejs";
-import { getVectorStore } from "../config/vectordb.js";
+import { getVectorStore } from "../src/config/vectordb";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
 import {
