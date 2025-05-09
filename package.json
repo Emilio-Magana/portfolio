@@ -6,7 +6,7 @@
   "description": "root package.json after merging split /client and /api back into src",
   "scripts": {
     "front-dev": "vite",
-    "back-dev": "npx tsx ./index.ts",
+    "back-dev": "npx tsx ./api/index.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
