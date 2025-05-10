@@ -1,6 +1,6 @@
 // // WHen using vercel: only use dotenv in dev as it calls for a local path
-// import { config } from "dotenv";
-// config({ path: "../.env" }); // Load .env into process.env
+import { config } from "dotenv";
+config({ path: ".env" }); // Load .env into process.env
 
 import { DataAPIClient } from "@datastax/astra-db-ts";
 import { AstraDBVectorStore } from "@langchain/community/vectorstores/astradb";
@@ -25,7 +25,7 @@ export async function getVectorStore() {
       collectionOptions: {
         vector: { dimension: 1536, metric: "cosine" },
       },
-    }
+    },
   );
 }
 
