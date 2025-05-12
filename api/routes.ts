@@ -48,7 +48,6 @@ export default async function handler(req: VercelRequest) {
       streaming: true,
       callbacks: [handlers],
       verbose: true,
-      // cache,
       temperature: 0,
     });
     const rephraseModel = new ChatOpenAI({
@@ -109,12 +108,14 @@ export default async function handler(req: VercelRequest) {
       combineDocsChain,
       retriever: historyAwareRetrievalChain,
     });
-    retrievalChain.invoke(
+    await retrievalChain.invoke(
       {
         input: latestMessage,
         chat_history: chatHistory,
       },
-      { callbacks: [handlers] },
+      {
+        callbacks: [handlers], // ✅ necessary for streaming
+      },
     );
     console.log("Invoked retrieval chain:", Date.now() - t0);
 

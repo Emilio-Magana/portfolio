@@ -24,7 +24,7 @@ export default function ChatMessages({
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
-  console.log("error: ", error, "isLoading: ", isLoading);
+  // console.log("error: ", error, "isLoading: ", isLoading);
 
   return (
     <div

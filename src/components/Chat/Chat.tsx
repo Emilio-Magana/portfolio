@@ -17,8 +17,6 @@ export default function Chat() {
     error,
   } = useChat({ api: "/api/routes" });
 
-  console.log("useChat called correctly");
-
   return (
     <div className="fixed z-40 flex flex-col transition-all duration-300 phone:bottom-3 phone:right-3 ipad_mini:bottom-7 ipad_mini:right-7">
       {isVisible && (
