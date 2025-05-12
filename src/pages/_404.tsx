@@ -1,5 +1,3 @@
-// import { Redirect } from "wouter";
-
 import { Link } from "wouter";
 
 export default function _404() {

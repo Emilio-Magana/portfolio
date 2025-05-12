@@ -54,10 +54,8 @@ export default function ChatMessages({
 
       {/* loading */}
       {isLoading && isLastMessageUser && (
-        <div className="flex items-center justify-center">
-          {status === "submitted" && (
-            <TbLoader3 className="text-muted-foreground mr-1.5 size-3 animate-spin" />
-          )}
+        <div className="flex items-center justify-center">       
+          <TbLoader3 className="text-muted-foreground mr-1.5 size-3 animate-spin" />
           <p className="text-muted-foreground text-center text-xs">
             Thinking...
           </p>

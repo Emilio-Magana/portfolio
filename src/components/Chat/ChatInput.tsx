@@ -13,7 +13,6 @@ interface ChatInputProps {
   setMessages: (
     messages: Message[] | ((messages: Message[]) => Message[]),
   ) => void;
-  // status: "submitted" | "streaming" | "ready" | "error";
   messages: Message[];
   setInput: React.Dispatch<React.SetStateAction<string>>;
 }

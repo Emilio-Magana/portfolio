@@ -40,7 +40,7 @@ export default async function handler(req: VercelRequest) {
       streaming: true,
       callbacks: [handlers],
       verbose: true,
-      cache,
+      // cache,
       temperature: 0,
     });
     const rephraseModel = new ChatOpenAI({

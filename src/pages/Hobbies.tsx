@@ -2,8 +2,6 @@ import HobbyCard from "../components/HobbyCard";
 import { hobbySchema } from "../config/schema";
 import hobbyData from "../data/hobbies.json";
 
-//shit stays center, something about adding project card makes all the
-// difference between projects page and hobbies page
 const hobbies = hobbySchema.parse(hobbyData).hobbies;
 
 export default function Hobbies() {
