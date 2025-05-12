@@ -8,8 +8,8 @@
     "front-dev": "vite",
     "back-dev": "npx tsx ./api/routes.ts",
     "gen": "npx tsx ./scripts/generate.ts",
-    "build": "tsc -b && vite build",
-    "build-v2": "npm run gen && vite build",
+    "build-alpha": "tsc -b && vite build",
+    "build": "npm run gen && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
