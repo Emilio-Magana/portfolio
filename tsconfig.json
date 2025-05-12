@@ -17,6 +17,7 @@
 
     /*New Additons after merge*/
     "outDir": "dist",
+    "rootDir": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
@@ -27,5 +28,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "script"]
 }
