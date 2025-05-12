@@ -1,5 +1,14 @@
 {
   "version": 2,
   "rewrites": [{ "source": "/(.*)", "destination": "/api/routes.js" }],
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "functions": {
+    "api/**.ts": {
+      "includeFiles": [
+        "node_modules/@langchain/**",
+        "node_modules/openai/**",
+        "node_modules/langchain/**"
+      ]
+    }
+  }
 }

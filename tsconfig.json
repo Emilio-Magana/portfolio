@@ -21,7 +21,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "paths": {
-      "@langchain/core": ["./node_modules/@langchain/core"]
+      "@langchain/core": ["./node_modules/@langchain/core"],
+      "@langchain/community": ["./node_modules/@langchain/community"]
     },
     /* Linting */
     "strict": true,
