@@ -32,11 +32,9 @@ export default async function handler(req: VercelRequest) {
       onStart: () => console.log("[stream] started"),
       onFinal: () => console.log("\n[stream] ended"),
     });
-    const vectorStorePromise = getVectorStore();
-    const vectorStore = await vectorStorePromise;
+    const retriever = (await getVectorStore()).asRetriever({ k: 3 });
     console.log("Got vector store:", Date.now() - t0);
 
-    const retriever = vectorStore.asRetriever();
     const body = req.body;
     const messages = body.messages;
 
@@ -111,16 +109,20 @@ export default async function handler(req: VercelRequest) {
       combineDocsChain,
       retriever: historyAwareRetrievalChain,
     });
-    await retrievalChain.invoke(
-      {
-        input: latestMessage,
-        chat_history: chatHistory,
-      },
-      {
-        callbacks: [handlers], // ✅ necessary for streaming
-      },
-    );
-    console.log("Invoked retrieval chain:", Date.now() - t0);
+    try {
+      await retrievalChain.invoke(
+        {
+          input: latestMessage,
+          chat_history: chatHistory,
+        },
+        {
+          callbacks: [handlers],
+        },
+      );
+      console.log("Chain completed:", Date.now() - t0);
+    } catch (err) {
+      console.error("Chain failed:", err);
+    }
 
     return new StreamingTextResponse(stream);
   } catch (error) {
