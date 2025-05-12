@@ -5,7 +5,7 @@ import Projects from "../pages/Projects";
 import Hobbies from "../pages/Hobbies";
 import _404 from "../pages/_404";
 import Footer from "../components/Footer";
-import Homepage from "../pages/Homepage";
+import Home from "../pages/Home.tsx";
 import { DarkModeProvider } from "../context/DarkModeContext.tsx";
 import { ChatProvider } from "../context/ChatContext.tsx";
 import Chat from "../components/Chat/Chat.tsx";
@@ -21,7 +21,7 @@ function App() {
           <div className="mx-auto max-w-[674px] phone:px-2 ipad_mini:px-8">
             <Switch>
               <Route path="/">
-                <Homepage />
+                <Home />
               </Route>
 
               <Route path="/projects">
