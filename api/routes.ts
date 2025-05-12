@@ -9,26 +9,31 @@ import {
 } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { Redis } from "@upstash/redis";
-import { VercelRequest } from "@vercel/node";
+// import { VercelRequest } from "@vercel/node";
 import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
-import { type Runnable } from "@langchain/core/runnables";
-import { type Document } from "@langchain/core/documents";
+// import { type Runnable } from "@langchain/core/runnables";
+// import { type Document } from "@langchain/core/documents";
 
-export default async function handler(req: VercelRequest) {
+const vectorStorePromise = getVectorStore();
+
+export default async function handler(req: Request) {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
     });
   }
   try {
-    const body = req.body;
+    const { stream, handlers } = LangChainStream();
+    const vectorStore = await vectorStorePromise;
+    const retriever = vectorStore.asRetriever({ k: 4 });
+
+    const body = await req.json();
     const messages = body.messages;
 
     const latestMessage = messages[messages.length - 1].content;
-    const { stream, handlers } = LangChainStream();
 
     const cache = new UpstashRedisCache({
       client: Redis.fromEnv(),
@@ -48,9 +53,9 @@ export default async function handler(req: VercelRequest) {
       cache,
     });
 
-    const retriever = (
-      await getVectorStore()
-    ).asRetriever() as unknown as Runnable<string, Document[]>;
+    // const retriever = (
+    //   await getVectorStore()
+    // ).asRetriever() as unknown as Runnable<string, Document[]>;
 
     const chatHistory = messages
       .slice(-6, -1)
