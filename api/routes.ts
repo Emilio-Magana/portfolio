@@ -20,14 +20,20 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 const vectorStorePromise = getVectorStore();
 
 export default async function handler(req: VercelRequest) {
+  const t0 = Date.now();
+  console.log("Start");
+
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
     });
   }
+
   try {
     const { stream, handlers } = LangChainStream();
     const vectorStore = await vectorStorePromise;
+    console.log("Got vector store:", Date.now() - t0);
+
     const retriever = vectorStore.asRetriever();
     const body = req.body;
     const messages = body.messages;
@@ -77,6 +83,8 @@ export default async function handler(req: VercelRequest) {
       retriever,
       rephrasePrompt,
     });
+    console.log("Created retriever:", Date.now() - t0);
+
     const prompt = ChatPromptTemplate.fromMessages([
       [
         "system",
@@ -109,6 +117,7 @@ export default async function handler(req: VercelRequest) {
       },
       { callbacks: [handlers] },
     );
+    console.log("Invoked retrieval chain:", Date.now() - t0);
 
     return new StreamingTextResponse(stream);
   } catch (error) {
