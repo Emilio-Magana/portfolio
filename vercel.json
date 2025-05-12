@@ -2,7 +2,7 @@
   "version": 2,
   "rewrites": [{ "source": "/(.*)", "destination": "/api/routes.js" }],
   "outputDirectory": "dist",
-  "functions": {
+  "functions": [{
     "api/**.ts": {
       "includeFiles": [
         "node_modules/@langchain/**",
@@ -10,5 +10,5 @@
         "node_modules/langchain/**"
       ]
     }
-  }
+  }]
 }
