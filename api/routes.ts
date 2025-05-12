@@ -1,4 +1,4 @@
-export const runtime = "nodejs";
+export const runtime = "edge";
 import { getVectorStore } from "../src/config/vectordb.js";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
@@ -53,7 +53,7 @@ export default async function handler(req: VercelRequest) {
     ).asRetriever() as unknown as Runnable<string, Document[]>;
 
     const chatHistory = messages
-      .slice(0, -1)
+      .slice(-6, -1)
       .map((msg: Message) =>
         msg.role === "user"
           ? new HumanMessage(msg.content)
