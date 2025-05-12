@@ -14,8 +14,8 @@ import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
-import { type Runnable } from '@langchain/core/runnables';
-import { type Document } from '@langchain/core/documents';
+import { type Runnable } from "@langchain/core/runnables";
+import { type Document } from "@langchain/core/documents";
 
 export default async function handler(req: VercelRequest) {
   if (req.method !== "POST") {
@@ -24,7 +24,6 @@ export default async function handler(req: VercelRequest) {
     });
   }
   try {
-    // const body = (await req.json()) as { messages: Message[] };
     const body = req.body;
     const messages = body.messages;
 
@@ -49,7 +48,9 @@ export default async function handler(req: VercelRequest) {
       cache,
     });
 
-    const retriever = (await getVectorStore()).asRetriever() as unknown as Runnable<string, Document[]>;
+    const retriever = (
+      await getVectorStore()
+    ).asRetriever() as unknown as Runnable<string, Document[]>;
 
     const chatHistory = messages
       .slice(0, -1)
@@ -97,10 +98,13 @@ export default async function handler(req: VercelRequest) {
       combineDocsChain,
       retriever: historyAwareRetrievalChain,
     });
-    await retrievalChain.invoke({
-      input: latestMessage,
-      chat_history: chatHistory,
-    });
+    retrievalChain.invoke(
+      {
+        input: latestMessage,
+        chat_history: chatHistory,
+      },
+      { callbacks: [handlers] },
+    );
 
     return new StreamingTextResponse(stream);
   } catch (error) {
