@@ -1,12 +1,15 @@
-// import dotenv from "dotenv";
-// dotenv.config({ path: ".env.local" });
+import { config } from "dotenv";
+config({ path: ".env" }); // Load .env into process.env
 
 import { DocumentInterface } from "@langchain/core/documents";
 import { Redis } from "@upstash/redis";
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { getEmbeddingsCollection, getVectorStore } from "../config/vectordb.js";
+import {
+  getEmbeddingsCollection,
+  getVectorStore,
+} from "../api/config/vectordb.js";
 
 async function generateEmbeddings() {
   const vectorStore = await getVectorStore();
