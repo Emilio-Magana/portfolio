@@ -1,5 +1,5 @@
-import { config } from "dotenv";
-config({ path: ".env" }); // Load .env into process.env
+// import { config } from "dotenv";
+// config({ path: ".env" }); // Load .env into process.env
 
 import { DocumentInterface } from "@langchain/core/documents";
 import { Redis } from "@upstash/redis";
@@ -9,7 +9,7 @@ import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import {
   getEmbeddingsCollection,
   getVectorStore,
-} from "../api/config/vectordb.js";
+} from "../src/config/vectordb.js";
 
 async function generateEmbeddings() {
   const vectorStore = await getVectorStore();
