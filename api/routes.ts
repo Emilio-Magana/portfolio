@@ -9,7 +9,7 @@ import {
 } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { Redis } from "@upstash/redis";
-// import { VercelRequest } from "@vercel/node";
+import { VercelRequest } from "@vercel/node";
 import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
@@ -19,7 +19,7 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 
 const vectorStorePromise = getVectorStore();
 
-export default async function handler(req: Request) {
+export default async function handler(req: VercelRequest) {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
@@ -28,9 +28,8 @@ export default async function handler(req: Request) {
   try {
     const { stream, handlers } = LangChainStream();
     const vectorStore = await vectorStorePromise;
-    const retriever = vectorStore.asRetriever({ k: 4 });
-
-    const body = await req.json();
+    const retriever = vectorStore.asRetriever();
+    const body = req.body;
     const messages = body.messages;
 
     const latestMessage = messages[messages.length - 1].content;
