@@ -9,8 +9,8 @@
     "back-dev": "npx tsx ./api/routes.ts",
     "build-beta": "tsc -b && vite build",
     "gen": "npx ts-node src/script/generate.ts",
-    "prebuild": "tsc",
-    "build": "node dist/script/generate.js && vite build",
+    "prebuild-alpha": "tsc",
+    "build": "tsc -b && node dist/src/script/generate.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
