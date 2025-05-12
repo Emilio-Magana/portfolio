@@ -6,10 +6,7 @@ import { Redis } from "@upstash/redis";
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import {
-  getEmbeddingsCollection,
-  getVectorStore,
-} from "../src/config/vectordb.js";
+import { getEmbeddingsCollection, getVectorStore } from "../config/vectordb.js";
 
 async function generateEmbeddings() {
   const vectorStore = await getVectorStore();
