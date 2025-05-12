@@ -24,6 +24,7 @@ export default function ChatMessages({
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
+  console.log("error: ", error, "isLoading: ", isLoading);
 
   return (
     <div
@@ -52,7 +53,7 @@ export default function ChatMessages({
 
       {/* loading */}
       {isLoading && isLastMessageUser && (
-        <div className="flex items-center justify-center">       
+        <div className="flex items-center justify-center">
           <TbLoader3 className="text-muted-foreground mr-1.5 size-3 animate-spin" />
           <p className="text-muted-foreground text-center text-xs">
             Thinking...
