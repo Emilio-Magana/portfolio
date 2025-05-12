@@ -28,7 +28,10 @@ export default async function handler(req: VercelRequest) {
   }
 
   try {
-    const { stream, handlers } = LangChainStream();
+    const { stream, handlers } = LangChainStream({
+      onStart: () => console.log("[stream] started"),
+      onFinal: () => console.log("\n[stream] ended"),
+    });
     const vectorStorePromise = getVectorStore();
     const vectorStore = await vectorStorePromise;
     console.log("Got vector store:", Date.now() - t0);
