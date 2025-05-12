@@ -10,7 +10,7 @@
     "build-beta": "tsc -b && vite build",
     "gen": "npx ts-node src/script/generate.ts",
     "prebuild": "tsc",
-    "build": "node dist/src/script/generate.js && vite build",
+    "build": "node dist/script/generate.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
