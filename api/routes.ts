@@ -17,8 +17,6 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 // import { type Runnable } from "@langchain/core/runnables";
 // import { type Document } from "@langchain/core/documents";
 
-const vectorStorePromise = getVectorStore();
-
 export default async function handler(req: VercelRequest) {
   const t0 = Date.now();
   console.log("Start");
@@ -31,6 +29,7 @@ export default async function handler(req: VercelRequest) {
 
   try {
     const { stream, handlers } = LangChainStream();
+    const vectorStorePromise = getVectorStore();
     const vectorStore = await vectorStorePromise;
     console.log("Got vector store:", Date.now() - t0);
 
