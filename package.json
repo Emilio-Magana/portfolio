@@ -7,7 +7,7 @@
   "scripts": {
     "front-dev": "vite",
     "back-dev": "npx tsx ./api/routes.ts",
-    "gen": "npx ts-node ./script/generate.ts",
+    "gen": "npx tsc -b ./script/generate.ts",
     "build-alpha": "tsc -b && vite build",
     "build": "npm run gen && vite build",
     "lint": "eslint .",
