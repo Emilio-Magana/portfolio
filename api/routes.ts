@@ -9,13 +9,13 @@ import {
 } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { Redis } from "@upstash/redis";
-import { VercelRequest } from "@vercel/node";
+// import { VercelRequest } from "@vercel/node";
 import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 
-export default async function handler(req: VercelRequest) {
+export default async function handler(req: Request) {
   const t0 = Date.now();
   console.log("Start");
 
@@ -33,7 +33,8 @@ export default async function handler(req: VercelRequest) {
     const retriever = (await getVectorStore()).asRetriever({ k: 3 });
     console.log("Got vector store:", Date.now() - t0);
 
-    const body = req.body;
+    // const body = req.body;
+    const body = await req.json();
     const messages = body.messages;
 
     const latestMessage = messages[messages.length - 1].content;
