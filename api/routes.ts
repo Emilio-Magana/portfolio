@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import { getVectorStore } from "../src/config/vectordb.js";
 import { UpstashRedisCache } from "@langchain/community/caches/upstash_redis";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";
@@ -14,6 +13,8 @@ import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
+
+export const runtime = "edge";
 
 export default async function handler(req: Request) {
   const t0 = Date.now();
@@ -34,8 +35,11 @@ export default async function handler(req: Request) {
     console.log("Got vector store:", Date.now() - t0);
 
     // const body = req.body;
-    const body = await req.json();
-    const messages = body.messages;
+    // const body = await req.json();
+    // const messages = body.messages;
+    const body = await req.text();
+    const parsedBody = JSON.parse(body); // parse it into JSON
+    const messages = parsedBody.messages;
 
     const latestMessage = messages[messages.length - 1].content;
 
