@@ -16,14 +16,6 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 
 export const runtime = "edge";
 
-// Function to decode the request body
-async function parseRequestBody(req) {
-  const text = await req.text(); // This would be available for non-Edge runtimes, so let's use the method as a fallback.
-  const decoder = new TextDecoder();
-  const decodedBody = decoder.decode(text);
-  return JSON.parse(decodedBody);
-}
-
 export default async function handler(req: Request) {
   const t0 = Date.now();
   console.log("Start");
@@ -44,7 +36,9 @@ export default async function handler(req: Request) {
 
     // const body = req.body;
     // const body = await req.json();
-    const body = await parseRequestBody(req);
+    const bodyArrayBuffer = await req.arrayBuffer();
+    const bodyText = new TextDecoder().decode(bodyArrayBuffer); // Decode as text
+    const body = JSON.parse(bodyText); // Parse the body as JSON
     const messages = body.messages;
 
     const latestMessage = messages[messages.length - 1].content;
