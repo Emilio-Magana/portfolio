@@ -9,12 +9,12 @@
       "links": [
         {
           "name": "Source",
-          "href": "https://github.com/Emilio-Magana/Emilio-Magana.github.io",
+          "href": "https://github.com/Emilio-Magana/portfolio",
           "size": "xsmall"
         },
         {
           "name": "Website",
-          "href": "http://emilio-magana.github.io",
+          "href": "https://portfolio-two-rust-85.vercel.app/",
           "size": "xsmall"
         }
       ]
