@@ -1,10 +1,5 @@
 {
   "version": 2,
   "rewrites": [{ "source": "/(.*)", "destination": "/api/routes.js" }],
-  "outputDirectory": "dist",
-  "functions": {
-    "api/routes.ts": {
-      "runtime": "edge"
-    }
-  }
+  "outputDirectory": "dist"
 }
