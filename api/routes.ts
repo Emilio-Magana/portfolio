@@ -121,7 +121,7 @@ export default async function handler(req: VercelRequest) {
       );
       console.log("Chain completed:", Date.now() - t0);
     } catch (err) {
-      console.error("Chain failed:", err);
+      console.error("Chain failed: oh no ", err);
     }
 
     return new StreamingTextResponse(stream);
