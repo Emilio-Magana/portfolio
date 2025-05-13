@@ -121,7 +121,7 @@ export default async function handler(req: VercelRequest) {
     } catch (err) {
       console.error("Chain failed: oh no ", err);
     }
-    console.log(stream);
+    console.log("stream:", stream);
     return new StreamingTextResponse(stream);
   } catch (error) {
     console.error("Error in /api:", error);
