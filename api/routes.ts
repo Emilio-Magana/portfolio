@@ -122,7 +122,7 @@ export default async function handler(req: VercelRequest) {
       console.error("Chain failed: oh no ", err);
     }
     console.log("stream:", stream);
-    await handlers.handleLLMEnd?.({ output: "done" }, "manual-run-id");
+    await handlers.handleLLMEnd?.({ _output: "done" }, "manual-run-id");
     return new StreamingTextResponse(stream);
   } catch (error) {
     console.error("Error in /api:", error);
