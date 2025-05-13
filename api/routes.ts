@@ -14,8 +14,6 @@ import { LangChainStream, Message, StreamingTextResponse } from "ai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
-// import { type Runnable } from "@langchain/core/runnables";
-// import { type Document } from "@langchain/core/documents";
 
 export default async function handler(req: VercelRequest) {
   const t0 = Date.now();
@@ -123,7 +121,7 @@ export default async function handler(req: VercelRequest) {
     } catch (err) {
       console.error("Chain failed: oh no ", err);
     }
-
+    console.log(stream);
     return new StreamingTextResponse(stream);
   } catch (error) {
     console.error("Error in /api:", error);
