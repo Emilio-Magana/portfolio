@@ -6,7 +6,7 @@
   "description": "root package.json after merging split /client and /api back into src, then changing to next.js from vite to ensure api functionality in vercel",
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
-    "gen": "npx ts-node ./scripts/generate.ts",
+    "gen": "npx tsx ./scripts/generate.ts",
     "build": "npm run gen && next build",
     "start": "next start",
     "lint": "eslint ."

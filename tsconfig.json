@@ -47,7 +47,7 @@
     ".next/types/**/*.ts"
   ],
   "exclude": ["./node_modules"],
-  "ts-node": {
+  "tsx": {
     "compilerOptions": {
       "module": "CommonJS"
     }
