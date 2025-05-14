@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Chatbot from "../components/Chatbot/Chat";
-import ParticleAnimation from "../animation/ParticleAnimation";
-import Providers from "../components/Providers";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Chatbot from "@/components/Chatbot/Chat";
+import ParticleAnimation from "@/animation/ParticleAnimation";
+import Providers from "@/components/Providers";
 import "./globals.css";
-// import ThemeScript from "@/components/ThemeScript";
 
 export const metadata: Metadata = {
   title: "Emilio's Root",

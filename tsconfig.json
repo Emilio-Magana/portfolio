@@ -39,12 +39,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "./src",
-    "./dist/types/**/*.ts",
-    "./next-env.d.ts",
-    "archive/context/DarkModeContext.tsx",
-    "archive/hooks"
-  ],
+  "include": ["./src", "./dist/types/**/*.ts", "./next-env.d.ts", "**/*.css"],
   "exclude": ["./node_modules"]
 }
