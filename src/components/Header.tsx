@@ -2,8 +2,9 @@
 
 import { useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
-import { Link, useRoute, useLocation } from "wouter";
 import ChatToggle from "./Chatbot/ChatToggle";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 const navLinks = [
   {
@@ -26,10 +27,13 @@ interface Props {
 }
 
 function ActiveLink({ children, href }: Props) {
-  const [isActive] = useRoute(href);
+  const pathname = usePathname();
+  const isActive = pathname === href;
+  const router = useRouter();
 
   function handleClick() {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push(href);
   }
 
   return (
@@ -47,7 +51,7 @@ function ActiveLink({ children, href }: Props) {
   );
 }
 export default function Header() {
-  const [location] = useLocation();
+  const [location] = usePathname();
 
   useEffect(() => {
     window.scrollTo(0, 0);

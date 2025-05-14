@@ -1,8 +1,9 @@
-import { useChat } from "@ai-sdk/react";
+"use client";
 import { useChatBot } from "../../context/ChatContext";
 import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";
 import Accordion from "../../ui/Accordion";
+import { useChat } from "ai/react";
 
 export default function Chat() {
   const { isVisible } = useChatBot();

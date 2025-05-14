@@ -35,6 +35,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["./src", "./dist/types/**/*.ts", "./next-env.d.ts", "scripts"],
+  "include": [
+    "./src",
+    "./dist/types/**/*.ts",
+    "./next-env.d.ts",
+    "scripts",
+    "src/hooks",
+    "src/context/DarkModeContext.tsx"
+  ],
   "exclude": ["./node_modules"]
 }

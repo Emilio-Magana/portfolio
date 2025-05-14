@@ -20,7 +20,7 @@ export default function Introduction() {
       <article className="flex items-center justify-between gap-8 phone:flex-col ipad_mini:flex-row-reverse">
         <img
           className="rounded-lg"
-          src="../public/profile_pic.png"
+          src="/profile_pic.png"
           alt="pfp"
           width={200}
         />

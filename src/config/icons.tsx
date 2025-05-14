@@ -11,6 +11,7 @@ import {
   SiR,
   SiExpress,
 } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 
 const Icons = {
   LinkedIn: SiLinkedin,
@@ -20,6 +21,7 @@ const Icons = {
   TypeScript: SiTypescript,
   Python: SiPython,
   ReactJs: SiReact,
+  NextJs: RiNextjsFill,
   CSS: SiCss3,
   Go: SiGo,
   R: SiR,

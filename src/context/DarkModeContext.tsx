@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useLocalStorageState } from "../hooks/useLocalStorageState.ts";
 
 const DarkModeContext = createContext<
@@ -12,23 +12,30 @@ const DarkModeContext = createContext<
 >(undefined);
 
 function DarkModeProvider({ children }: { children: React.ReactNode }) {
+  const [hasMounted, setHasMounted] = useState(false);
   const [isDarkMode, setIsDarkMode] = useLocalStorageState<boolean>(
     "isDarkMode",
-    window.matchMedia("(prefers-color-scheme: dark)").matches,
+    true,
   );
+  useEffect(() => {
+    setHasMounted(true);
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    setIsDarkMode((prev) => prev ?? prefersDark);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  useEffect(
-    function () {
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-      } else {
-        document.documentElement.classList.add("light");
-        document.documentElement.classList.remove("dark");
-      }
-    },
-    [isDarkMode],
-  );
+  useEffect(() => {
+    if (!hasMounted) return;
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode, hasMounted]);
 
   function toggleDarkMode() {
     setIsDarkMode((isDark) => !isDark);

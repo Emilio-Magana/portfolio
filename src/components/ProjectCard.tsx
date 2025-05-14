@@ -1,3 +1,4 @@
+"use client";
 import { SiGithub } from "react-icons/si";
 import { useDarkMode } from "../context/DarkModeContext";
 import { Project } from "../config/schema";
@@ -15,14 +16,14 @@ export default function ProjectCard({
 }: Project) {
   const { isDarkMode } = useDarkMode();
   return (
-    <div className="text-tertiary border-componentBg mt-4 flex w-full flex-col rounded-lg border-2 p-2 font-semibold">
+    <div className="mt-4 flex w-full flex-col rounded-lg border-2 border-componentBg p-2 font-semibold text-tertiary">
       <img
-        className="border-cardBr min-h-[210px] place-self-center rounded-md border"
+        className="min-h-[210px] place-self-center rounded-md border border-cardBr"
         src={!isDarkMode && imageAlt ? imageAlt : image}
         alt="website preview"
       />
       <h1 className="capitaliz my-2 text-lg">{name}</h1>
-      <figcaption className="text-primary ipad_mini:line-clamp-5 mb-2 text-sm font-normal">
+      <figcaption className="mb-2 text-sm font-normal text-primary ipad_mini:line-clamp-5">
         {description}
       </figcaption>
       <div className="mt-auto flex flex-col gap-2">
@@ -30,7 +31,7 @@ export default function ProjectCard({
           {tags.map((tag, id) => (
             <p
               key={id}
-              className="bg-primary text-opposite w-fit rounded-lg p-1 text-xs font-extrabold"
+              className="w-fit rounded-lg bg-primary p-1 text-xs font-extrabold text-opposite"
             >
               {tag}
             </p>
@@ -42,7 +43,7 @@ export default function ProjectCard({
               key={id}
               href={link.href}
               target="_blank"
-              className="bg-tertiary text-opposite flex items-center gap-1 rounded-lg p-1 text-sm font-semibold duration-500"
+              className="flex items-center gap-1 rounded-lg bg-tertiary p-1 text-sm font-semibold text-opposite duration-500"
             >
               {link.name === "Source" ? (
                 <SiGithub size={iconSizeMap[link.size]} />

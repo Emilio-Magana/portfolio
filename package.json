@@ -5,20 +5,21 @@
   "type": "module",
   "description": "root package.json after merging split /client and /api back into src, then changing to next.js from vite to ensure api functionality in vercel",
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "gen": "npx tsx ./scripts/generate.ts",
     "build": "npm run gen && next build",
     "start": "next start",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@ai-sdk/react": "^1.2.12",
     "@datastax/astra-db-ts": "^1.5.0",
     "@langchain/community": "^0.3.42",
     "@langchain/core": "^0.3.55",
     "@langchain/openai": "^0.3.17",
     "@upstash/redis": "^1.34.9",
-    "@vercel/node": "^5.1.15",
-    "ai": "^3.4.33",
+    "@vercel/node": "^2.3.0",
+    "ai": "^3.3.35",
     "dotenv": "^16.5.0",
     "mapbox-gl": "^3.11.0",
     "motion": "^12.9.2",
@@ -28,7 +29,6 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
-    "wouter": "^3.7.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
-import ProjectCard from "../components/ProjectCard";
-import { projectSchema } from "../config/schema";
-import projectData from "../data/projects.json";
+import ProjectCard from "../../components/ProjectCard";
+import { projectSchema } from "../../config/schema";
+import projectData from "../../data/projects.json";
 
 // at top of the page add a list of skill tags which are clickable and will
 // filter projects based on skill clicked on, allow for multiple filters and

@@ -1,7 +1,7 @@
 import { Message } from "ai";
+import Link from "next/link";
 import { MdPrecisionManufacturing } from "react-icons/md";
 import Markdown from "react-markdown";
-import { Link } from "wouter";
 
 export default function ChatMessage({ message }: { message: Message }) {
   const { role, content } = message;
