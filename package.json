@@ -9,7 +9,7 @@
     "gen": "npx tsx ./scripts/generate.ts",
     "build": "npm run gen && next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "next lint ."
   },
   "dependencies": {
     "@ai-sdk/react": "^1.2.12",
@@ -41,7 +41,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.26.0",
-    "eslint-plugin-next": "^0.0.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
@@ -49,10 +48,8 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.17",
-    "ts-node": "^10.9.2",
     "tsx": "^4.19.4",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "typescript-eslint": "^8.24.1"
   }
 }
