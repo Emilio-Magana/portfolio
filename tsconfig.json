@@ -33,15 +33,18 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "./src",
     "./dist/types/**/*.ts",
     "./next-env.d.ts",
-    "scripts",
-    "src/hooks",
-    "src/context/DarkModeContext.tsx"
+    "archive/context/DarkModeContext.tsx",
+    "archive/hooks"
   ],
   "exclude": ["./node_modules"]
 }

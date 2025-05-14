@@ -1,6 +1,6 @@
-import HobbyCard from "../../components/HobbyCard";
-import { hobbySchema } from "../../config/schema";
-import hobbyData from "../../data/hobbies.json";
+import HobbyCard from "@/components/HobbyCard";
+import { hobbySchema } from "@/config/schema";
+import hobbyData from "@/data/hobbies.json";
 
 const hobbies = hobbySchema.parse(hobbyData).hobbies;
 

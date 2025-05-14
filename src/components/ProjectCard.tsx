@@ -1,10 +1,11 @@
 "use client";
 import { SiGithub } from "react-icons/si";
-import { useDarkMode } from "../context/DarkModeContext";
+// import { useDarkMode } from "../../archive/context/DarkModeContext";
 import { Project } from "../config/schema";
 
 import { SlGlobeAlt } from "react-icons/sl";
 import { iconSizeMap } from "../config/sizes";
+import { useTheme } from "next-themes";
 
 export default function ProjectCard({
   name,
@@ -14,12 +15,13 @@ export default function ProjectCard({
   tags,
   links,
 }: Project) {
-  const { isDarkMode } = useDarkMode();
+  // const { isDarkMode } = useDarkMode();
+  const { theme } = useTheme();
   return (
     <div className="mt-4 flex w-full flex-col rounded-lg border-2 border-componentBg p-2 font-semibold text-tertiary">
       <img
         className="min-h-[210px] place-self-center rounded-md border border-cardBr"
-        src={!isDarkMode && imageAlt ? imageAlt : image}
+        src={theme === "light" && imageAlt ? imageAlt : image}
         alt="website preview"
       />
       <h1 className="capitaliz my-2 text-lg">{name}</h1>

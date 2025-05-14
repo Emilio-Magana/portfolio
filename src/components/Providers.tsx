@@ -1,11 +1,12 @@
 "use client";
-import { DarkModeProvider } from "../context/DarkModeContext";
+// import { DarkModeProvider } from "../../archive/context/DarkModeContext";
+import { ThemeProvider } from "next-themes";
 import { ChatProvider } from "../context/ChatContext";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <DarkModeProvider>
+    <ThemeProvider enableSystem attribute="class" defaultTheme="system">
       <ChatProvider>{children}</ChatProvider>
-    </DarkModeProvider>
+    </ThemeProvider>
   );
 }
