@@ -1,6 +1,6 @@
 "use server";
-import { config } from "dotenv";
-config({ path: ".env" }); // Load .env into process.env
+// import { config } from "dotenv";
+// config({ path: ".env" }); // Load .env into process.env
 
 import { DocumentInterface } from "@langchain/core/documents";
 import { Redis } from "@upstash/redis";
