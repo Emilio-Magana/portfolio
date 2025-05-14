@@ -1,7 +1,4 @@
-// import Socials from "./Socials";
-import { Link } from "wouter";
-// import mountain from "../assets/icons8-mountain-96.png";
-import mountain from "/icons8-mountain-96.png";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -19,7 +16,10 @@ export default function Footer() {
           href="https://www.icons8.com"
           target="_blank"
         >
-          <img src={mountain} className="inline w-5 pr-1"></img>
+          <img
+            src="../public/icons8-mountain-96.png"
+            className="inline w-5 pr-1"
+          ></img>
           from icons8.com
         </a>
       </p>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
@@ -14,7 +16,7 @@ export default function Accordion({ children }: AccordionParentProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-botBr bg-backgroundFadeE max-h-[90vh] w-80 rounded-2xl border-2">
+    <div className="max-h-[90vh] w-80 rounded-2xl border-2 border-botBr bg-backgroundFadeE">
       <AccordionTitle onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
 
       <AnimatePresence initial={false}>

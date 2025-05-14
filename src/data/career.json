@@ -4,7 +4,7 @@
       "name": "Lattice Semiconductor",
       "href": "https://www.latticesemi.com/",
       "title": "Product Engineer",
-      "logo": "Lattice",
+      "logo": "./lattice-logo.png",
       "start": "Oct 2021",
       "end": "Jan 2024",
       "description": [
@@ -18,7 +18,7 @@
       "name": "Oregon State University",
       "href": "https://oregonstate.edu/",
       "title": "Teacher's Assitant/Head TA",
-      "logo": "OSU",
+      "logo": "./OSU-logo.png",
       "start": "Jan 2019",
       "end": "Mar 2019",
       "description": [

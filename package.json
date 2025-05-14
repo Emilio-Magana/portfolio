@@ -3,15 +3,13 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "root package.json after merging split /client and /api back into src",
+  "description": "root package.json after merging split /client and /api back into src, then changing to next.js from vite to ensure api functionality in vercel",
   "scripts": {
-    "front-dev": "vite",
-    "back-dev": "npx tsx ./api/routes.ts",
-    "dev": "npm run front-dev && npm run back-dev",
-    "gen": "npx tsx ./src/scripts/generate.ts",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "gen": "npx tsx ./scripts/generate.ts",
+    "build": "npm run gen && next build",
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@datastax/astra-db-ts": "^1.5.0",
@@ -24,6 +22,7 @@
     "dotenv": "^16.5.0",
     "mapbox-gl": "^3.11.0",
     "motion": "^12.9.2",
+    "next": "^15.3.2",
     "openai": "^4.61.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -1,3 +1,4 @@
+"use client";
 import { Message } from "ai";
 import { TbLoader3 } from "react-icons/tb";
 import { MdPrecisionManufacturing } from "react-icons/md";
@@ -24,7 +25,6 @@ export default function ChatMessages({
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
-  // console.log("error: ", error, "isLoading: ", isLoading);
 
   return (
     <div

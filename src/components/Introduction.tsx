@@ -1,4 +1,3 @@
-import pfp from "/profile_pic.png";
 import Socials from "./Socials";
 import { FaFileDownload } from "react-icons/fa";
 import { CgArrowsExpandDownRight } from "react-icons/cg";
@@ -19,7 +18,12 @@ export default function Introduction() {
       style={{ animationDelay: "0.2s" }}
     >
       <article className="flex items-center justify-between gap-8 phone:flex-col ipad_mini:flex-row-reverse">
-        <img className="rounded-lg" src={pfp} alt="pfp" width={200} />
+        <img
+          className="rounded-lg"
+          src="../public/profile_pic.png"
+          alt="pfp"
+          width={200}
+        />
 
         <div>
           <h1 className="font-mono text-4xl tracking-tight text-tertiary">

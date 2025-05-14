@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { careerSchema, educationSchema } from "../config/schema";
 import careerData from "../data/career.json";
@@ -19,15 +21,15 @@ export default function Experience() {
   }
   return (
     <section
-      className="animate-fade-in-up my-8 justify-evenly place-self-center px-1 opacity-0 delay-300"
+      className="my-8 animate-fade-in-up justify-evenly place-self-center px-1 opacity-0 delay-300"
       style={{ animationDelay: "0.4s" }}
     >
-      <div className="border-componentBg bg-componentBg flex rounded-lg border-2 p-1">
+      <div className="flex rounded-lg border-2 border-componentBg bg-componentBg p-1">
         <button
           className={
             activeTab === "work"
-              ? btnStyle + " text-tertiary bg-activeTab mr-[2px]"
-              : btnStyle + " text-nonActive mr-[2px]"
+              ? btnStyle + " mr-[2px] bg-activeTab text-tertiary"
+              : btnStyle + " mr-[2px] text-nonActive"
           }
           onClick={handleWorkTab}
         >
@@ -36,15 +38,15 @@ export default function Experience() {
         <button
           className={
             activeTab === "education"
-              ? btnStyle + " text-tertiary bg-activeTab ml-[2px]"
-              : btnStyle + " text-nonActive ml-[2px]"
+              ? btnStyle + " ml-[2px] bg-activeTab text-tertiary"
+              : btnStyle + " ml-[2px] text-nonActive"
           }
           onClick={handleEducationTab}
         >
           Education
         </button>
       </div>
-      <div className="border-componentBg mt-2 flex rounded-lg border-2">
+      <div className="mt-2 flex rounded-lg border-2 border-componentBg">
         {activeTab === "work" && <Timeline experience={career} />}
         {activeTab === "education" && <Timeline experience={education} />}
       </div>

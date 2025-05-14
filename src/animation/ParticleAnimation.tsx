@@ -1,6 +1,6 @@
-// import { useEffect } from "react";
-import "./ParticleAnimation.css";
+"use client";
 
+import styles from "./ParticleAnimation.module.css";
 import { useEffect, useRef } from "react";
 
 function ParticleAnimation() {
@@ -15,7 +15,7 @@ function ParticleAnimation() {
 
     for (let i = 0; i < numParticles; i++) {
       const particle = document.createElement("div");
-      particle.className = "particle";
+      particle.className = styles.particle;
       particle.style.setProperty("--random-x", Math.random().toString());
       particle.style.left = `${Math.random() * 100}vw`;
       particle.style.top = `-5px`;

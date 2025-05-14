@@ -1,3 +1,4 @@
+"use client";
 import { useChatBot } from "../../context/ChatContext";
 import { PiChatLight, PiChatSlashLight } from "react-icons/pi";
 

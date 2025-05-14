@@ -1,3 +1,4 @@
+"use client";
 import { GiBarbedSun, GiEvilMoon } from "react-icons/gi";
 import { useDarkMode } from "../context/DarkModeContext";
 

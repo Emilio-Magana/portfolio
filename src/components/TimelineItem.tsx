@@ -1,12 +1,4 @@
 import { Experience } from "../config/schema";
-import osu from "/OSU-logo.png";
-import lattice from "/lattice-logo.png";
-
-const logoMap = {
-  Lattice: lattice,
-  OSU: osu,
-};
-
 function TimelineItem({
   name,
   title,
@@ -15,11 +7,10 @@ function TimelineItem({
   end,
   description,
 }: Experience) {
-  const iconURL = logoMap[logo as keyof typeof logoMap];
   return (
     <div className="relative flex px-3 py-3">
       <img
-        src={iconURL}
+        src={logo}
         className="h-14 w-14 rounded-full bg-logoBg object-contain"
       />
 

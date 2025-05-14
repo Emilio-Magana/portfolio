@@ -1,3 +1,4 @@
+"use server";
 // import { config } from "dotenv";
 // config({ path: ".env" }); // Load .env into process.env
 
@@ -6,7 +7,10 @@ import { Redis } from "@upstash/redis";
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { getEmbeddingsCollection, getVectorStore } from "../config/vectordb.js";
+import {
+  getEmbeddingsCollection,
+  getVectorStore,
+} from "../src/config/vectordb.js";
 
 async function generateEmbeddings() {
   const vectorStore = await getVectorStore();
@@ -16,7 +20,7 @@ async function generateEmbeddings() {
   (await Redis.fromEnv()).flushdb();
 
   const routeLoader = new DirectoryLoader(
-    "src/pages",
+    "src/app",
     {
       ".tsx": (path) => new TextLoader(path),
     },
@@ -25,12 +29,12 @@ async function generateEmbeddings() {
 
   // routes
   const routes = (await routeLoader.load())
-    .filter((route) => route.metadata.source.endsWith(".tsx"))
+    .filter((route) => route.metadata.source.endsWith("page.tsx"))
     .map((route): DocumentInterface => {
       const url =
         route.metadata.source
           .replace(/\\/g, "/") // replace "\\" with "/"
-          .split("/src/pages")[1]
+          .split("/src/app")[1]
           .split("/.tsx")[0] || "/";
 
       const pageContentTrimmed = route.pageContent
