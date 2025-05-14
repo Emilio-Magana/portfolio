@@ -15,6 +15,9 @@ dist-ssr
 .next
 next-env.d.ts
 
+# production
+build
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
