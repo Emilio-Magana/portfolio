@@ -11,7 +11,7 @@ export default function ThemeToggle() {
   }
   return (
     <button className="hover:text-hover" onClick={handleTheme}>
-      {theme === "dark" ? <GiBarbedSun size={20} /> : <GiEvilMoon size={20} />}
+      {theme === "light" ? <GiBarbedSun size={20} /> : <GiEvilMoon size={20} />}
     </button>
   );
 }
