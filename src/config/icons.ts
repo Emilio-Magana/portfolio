@@ -7,9 +7,7 @@ import {
   SiReact,
   SiCss3,
   SiSupabase,
-  SiGo,
   SiR,
-  SiExpress,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { SlGlobeAlt } from "react-icons/sl";
@@ -21,10 +19,8 @@ const technicalIcons = {
   ReactJs: SiReact,
   NextJs: RiNextjsFill,
   CSS: SiCss3,
-  Go: SiGo,
   R: SiR,
   Supabase: SiSupabase,
-  Express: SiExpress,
 };
 const socialIcons = {
   LinkedIn: SiLinkedin,

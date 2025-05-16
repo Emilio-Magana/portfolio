@@ -8,7 +8,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Emilio's Root",
-  description: "Personal Portfolio Website",
+  description: "Personal Portfolio Website!",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Emilio's Crag</title>
-        <meta name="description" content="Portfolio Website!" />
+        <meta name="description" content="Personal Portfolio Website!" />
       </head>
       <body>
         <Providers>

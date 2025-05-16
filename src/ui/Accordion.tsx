@@ -53,7 +53,7 @@ function AccordionTitle({ onClick, isOpen }: TitleProps) {
         <p className="text-xs">Chat with</p>
         <div className="flex items-center gap-2">
           <span className="size-2 animate-pulse rounded-full bg-emerald-500" />
-          <p className="text-sm font-medium">Emi Bot</p>
+          <p className="text-sm font-medium">EmiBot</p>
         </div>
       </div>
       <span
