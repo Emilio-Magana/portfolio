@@ -28,7 +28,7 @@ export default function ActiveLink({ children, href }: LinkProps) {
       onClick={handleClick}
       className={
         isActive && href !== "/"
-          ? "text-tertiary underline underline-offset-2"
+          ? "text-primary underline underline-offset-2"
           : ""
       }
     >

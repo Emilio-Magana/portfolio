@@ -23,9 +23,9 @@ export default {
         resumeBg: "var(--resumeBg)",
 
         opposite: "var(--opposite)",
-        primary: "var(--primary)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",
+        primary: "var(--primary)",
         nonActive: "var(--nonActive)",
 
         particleC: "var(--particleC)",

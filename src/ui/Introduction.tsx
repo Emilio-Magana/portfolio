@@ -26,11 +26,11 @@ export default function Introduction() {
         />
 
         <div>
-          <h1 className="font-mono text-4xl tracking-tight text-tertiary">
+          <h1 className="font-mono text-4xl tracking-tight text-primary">
             Heyo, I'm Emilio
             <p className="inline cursor-cell hover:animate-pulse">👋</p>
           </h1>
-          <p className="mt-3 text-secondary">
+          <p className="mt-3 text-primary">
             A {EMILIO_AGE} year old software developer from Oregon, in the
             United States. I like to develop fullstack, and spend my free time
             at a local climbing gym or biking around town!

@@ -20,7 +20,7 @@ export default function ChatMessage({ message }: { message: Message }) {
         className={
           isBot
             ? "max-w-64 rounded border bg-opposite px-3 py-2"
-            : "max-w-64 rounded border bg-opposite px-3 py-2 text-tertiary"
+            : "max-w-64 rounded border bg-opposite px-3 py-2 text-primary"
         }
       >
         <Markdown

@@ -14,7 +14,7 @@ export default function ShowcaseCard({
   links,
 }: Showcase) {
   return (
-    <div className="mt-4 flex w-full flex-col rounded-lg border-2 border-componentBg p-2 font-semibold text-tertiary">
+    <div className="mt-4 flex w-full flex-col rounded-lg border-2 border-componentBg p-2 font-semibold text-primary">
       <ThematicImage
         imageAlt={imageAlt}
         image={image}

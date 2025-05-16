@@ -9,7 +9,7 @@ function TabButton({ onTabChange, label, isActive }: TabButtonProps) {
     <button
       className={
         isActive
-          ? "mr-[2px] h-[32px] w-1/2 rounded-md bg-activeTab font-mono text-tertiary"
+          ? "mr-[2px] h-[32px] w-1/2 rounded-md bg-activeTab font-mono text-primary"
           : "mr-[2px] h-[32px] w-1/2 rounded-md font-mono text-nonActive"
       }
       onClick={onTabChange}

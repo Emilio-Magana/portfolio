@@ -26,14 +26,14 @@ function TimelineItem({
       />
 
       <ul className="pl-8 text-left">
-        <li className="text-sm text-primary">
+        <li className="text-sm text-secondary">
           {start} - {end}
         </li>
-        <li className="text-lg font-bold text-tertiary">
+        <li className="text-lg font-bold text-primary">
           <strong>{name}</strong>
         </li>
-        <li className="text-secondary">{title}</li>
-        <ul className="list-disc text-pretty pl-3 text-tertiary">
+        <li className="text-tertiary">{title}</li>
+        <ul className="list-disc text-pretty pl-3 text-primary">
           {description?.map((bullet, index) => <li key={index}>{bullet}</li>)}
         </ul>
       </ul>

@@ -24,7 +24,7 @@ export default function ThematicImage({
         alt="website preview"
       />
       <h1 className="capitaliz my-2 text-lg">{name}</h1>
-      <figcaption className="mb-2 text-sm font-normal text-primary ipad_mini:line-clamp-5">
+      <figcaption className="mb-2 text-sm font-normal text-tertiary ipad_mini:line-clamp-5">
         {description}
       </figcaption>
     </div>

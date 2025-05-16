@@ -8,7 +8,7 @@ export default function Tags({ tags }: TagProps) {
       {tags.map((tag, id) => (
         <p
           key={id}
-          className="w-fit rounded-lg bg-primary p-1 text-xs font-extrabold text-opposite"
+          className="w-fit rounded-lg bg-secondary p-1 text-xs font-extrabold text-opposite"
         >
           {tag}
         </p>

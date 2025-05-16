@@ -1,4 +1,4 @@
-import { sourceIcons } from "@/config/hicons";
+import { sourceIcons } from "@/config/icons";
 import { iconSizeMap } from "../config/sizes";
 import { IoEnter } from "react-icons/io5";
 import { TiTrash } from "react-icons/ti";
@@ -48,7 +48,7 @@ function SourceButtons({ links }: SourceProps) {
             key={id}
             href={link.href}
             target="_blank"
-            className="flex items-center gap-1 rounded-lg bg-tertiary p-1 text-sm font-semibold text-opposite duration-500"
+            className="flex items-center gap-1 rounded-lg bg-primary p-1 text-sm font-semibold text-opposite duration-500"
           >
             <SourceIcon size={iconSize} />
             <span>{link.name}</span>

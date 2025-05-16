@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
       className="my-8 animate-fade-in-up px-1 opacity-0"
       style={{ animationDelay: "0.5s" }}
     >
-      <h1 className="flex justify-between font-mono text-2xl font-bold text-tertiary">
+      <h1 className="flex justify-between font-mono text-2xl font-bold text-primary">
         Featured Projects
         <Link
           className="pr-2 pt-[10px] text-sm duration-200 hover:translate-x-1"

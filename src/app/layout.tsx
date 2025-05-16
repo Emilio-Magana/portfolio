@@ -25,7 +25,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <ParticleAnimation />
-          <main className="flex min-h-screen flex-col bg-gradient-to-b from-backgroundFadeB to-backgroundFadeE to-5% text-secondary antialiased dark:bg-black">
+          <main className="flex min-h-screen flex-col bg-gradient-to-b from-backgroundFadeB to-backgroundFadeE to-5% text-tertiary antialiased dark:bg-black">
             <Header />
             <div
               className="mx-auto max-w-[674px] phone:px-2 ipad_mini:px-8"
