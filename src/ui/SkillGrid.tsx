@@ -36,7 +36,7 @@ function SkillCard({ name, hover_color, size }: Skill) {
 
   let padding: string = " pt-1 ";
   if (name === "NextJs") {
-    padding = "";
+    padding = " ";
     if (resolvedTheme === "light") {
       hover_color = "hover:text-[#111111]";
     } else {
