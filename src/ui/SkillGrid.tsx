@@ -21,6 +21,7 @@ export default function SkillGrid() {
     </section>
   );
 }
+//whered my colors go????
 
 const btnStyle: string =
   "rounded-lg border border-skillBr h-[70px] duration-100 ease-in-out hover:bg-skillTileBg group cursor-[url(/circle-outline.svg)_12_24,_auto] pt-1 ";
