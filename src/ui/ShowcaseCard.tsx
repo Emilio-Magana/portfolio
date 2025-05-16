@@ -1,7 +1,7 @@
 "use client";
 
 import { Showcase } from "../config/schema";
-import SourceButtons from "./SourceButtons";
+import { SourceButtons } from "./Buttons";
 import Tags from "./Tags";
 import ThematicImage from "./ThematicImage";
 
@@ -23,7 +23,7 @@ export default function ShowcaseCard({
       />
       <div className="mt-auto flex flex-col gap-2">
         <Tags tags={tags} />
-        <SourceButtons links={links} />;
+        <SourceButtons links={links} />
       </div>
     </div>
   );

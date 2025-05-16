@@ -4,18 +4,15 @@ import { useEffect, useState } from "react";
 import { GiBarbedSun, GiEvilMoon } from "react-icons/gi";
 
 export default function ThemeToggle() {
-  // const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
   if (!mounted) {
     return null;
   }
-
   function handleTheme() {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }

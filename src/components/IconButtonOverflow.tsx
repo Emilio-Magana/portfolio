@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 interface Props {
   children: React.ReactNode;
   hiddenText: string;
-  // color: string;
 }
 
 export default function IconButtonOverflow({ children, hiddenText }: Props) {

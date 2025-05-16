@@ -1,7 +1,7 @@
 "use client";
 
 import { iconSizeMap } from "@/config/sizes";
-import { technicalIcons } from "@/config/icons";
+import { technicalIcons } from "@/config/hicons";
 import { Skill } from "@/config/schema";
 import skillData from "@/data/skills.json";
 import { skillSchema } from "@/config/schema";

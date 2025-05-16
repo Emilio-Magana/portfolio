@@ -1,6 +1,6 @@
 import type { Message } from "ai/react";
-import { TiTrash } from "react-icons/ti";
-import { IoEnter } from "react-icons/io5";
+import { DeleteButton, SubmitButton } from "@/ui/Buttons";
+import Input from "@/ui/Input";
 
 interface ChatInputProps {
   input: string;
@@ -16,7 +16,6 @@ interface ChatInputProps {
   messages: Message[];
   setInput: React.Dispatch<React.SetStateAction<string>>;
 }
-
 export default function ChatInput({
   input,
   handleSubmit,
@@ -25,42 +24,33 @@ export default function ChatInput({
   messages,
   setInput,
 }: ChatInputProps) {
+  const isSubmitDisabled = input.length === 0;
+  const isDeleteDisabled = messages.length === 0 && input.length === 0;
   function handleDelete() {
     setMessages([]);
     setInput("");
+  }
+  function handleOnKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
   }
   return (
     <form
       onSubmit={handleSubmit}
       className="flex justify-between gap-1 border-t border-skillBr px-1 py-1"
     >
-      <button
-        onClick={handleDelete}
-        className="items-baseline rounded-md px-1 disabled:cursor-not-allowed"
-        disabled={messages.length < 0 || input.length < 0}
-      >
-        <TiTrash size={20} className="text-rose-500" />
-      </button>
-      <input
-        autoFocus
-        className="w-full place-items-baseline rounded-md border border-skillBr bg-inherit p-1 text-secondary"
-        placeholder="Ask me something :3!"
+      <DeleteButton
+        onClickDelete={handleDelete}
+        isDeleteDisabled={isDeleteDisabled}
+      />
+      <Input
         value={input}
         onChange={handleInputChange}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            e.preventDefault();
-            handleSubmit();
-          }
-        }}
+        onKeyDown={handleOnKeyDown}
       />
-      <button
-        className="px-2 py-2 disabled:cursor-not-allowed"
-        disabled={input.length === 0}
-        type="submit"
-      >
-        <IoEnter size={20} />
-      </button>
+      <SubmitButton isSubmitDisabled={isSubmitDisabled} />
     </form>
   );
 }
