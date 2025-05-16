@@ -38,6 +38,8 @@ function SkillCard({ name, hover_color, size }: Skill) {
     padding = "";
     if (resolvedTheme === "light") {
       hover_color = "hover:text-[#111111]";
+    } else {
+      hover_color = "hover:text-[#eeeeee]";
     }
   }
 
