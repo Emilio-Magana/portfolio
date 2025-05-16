@@ -19,7 +19,7 @@ export default function ThematicImage({
     <div>
       {" "}
       <img
-        className="min-h-[210px] place-self-center rounded-md border border-cardBr"
+        className="min-h-[255px] place-self-center rounded-md border border-cardBr"
         src={resolvedTheme === "light" && imageAlt ? imageAlt : image}
         alt="website preview"
       />
