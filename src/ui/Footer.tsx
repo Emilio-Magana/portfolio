@@ -3,7 +3,6 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="my-8 flex flex-col justify-center place-self-center ipad_mini:flex-row-reverse ipad_mini:justify-between">
-      {/* <Socials /> */}
       <p className="text-muted-foreground text-xs">
         &copy;{new Date().getFullYear()} Emilio Maga&ntilde;a
         {" | "}

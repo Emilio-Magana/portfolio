@@ -26,9 +26,9 @@
       "size": "small"
     },
     {
-      "name": "Go",
-      "hover_color": "hover:text-[#00ADD8]",
-      "size": "large"
+      "name": "NextJs",
+      "hover_color": "hover:text-[#eeeeee]",
+      "size": "medium"
     },
     {
       "name": "R",

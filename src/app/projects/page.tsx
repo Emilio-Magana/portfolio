@@ -1,4 +1,5 @@
-import ProjectCard from "../../components/ProjectCard";
+import ShowcaseCard from "@/ui/ShowcaseCard";
+// import ProjectCard from "../../components/ProjectCard";
 import { projectSchema } from "../../config/schema";
 import projectData from "../../data/projects.json";
 
@@ -17,7 +18,7 @@ export default function Projects() {
         style={{ animationDelay: "0.1s" }}
       >
         {projects.map((project, key) => (
-          <ProjectCard {...project} key={key} />
+          <ShowcaseCard {...project} key={key} />
         ))}
       </div>
     </section>

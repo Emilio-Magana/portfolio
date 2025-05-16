@@ -4,11 +4,11 @@ import { useRef, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
-  text: string;
+  hiddenText: string;
   // color: string;
 }
 
-export default function IconButtonOverflow({ children, text }: Props) {
+export default function IconButtonOverflow({ children, hiddenText }: Props) {
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -17,7 +17,7 @@ export default function IconButtonOverflow({ children, text }: Props) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="flex items-center rounded-lg"
-      onClick={() => navigator.clipboard.writeText(text)}
+      onClick={() => navigator.clipboard.writeText(hiddenText)}
     >
       {children}
       <div
@@ -25,9 +25,8 @@ export default function IconButtonOverflow({ children, text }: Props) {
         className="ease-in-outout overflow-x-hidden transition-all duration-500"
       >
         <span ref={ref} className="px-1.5">
-          {text}
+          {hiddenText}
         </span>
-        {hovered ? <span>hello</span> : ""}
       </div>
     </button>
   );

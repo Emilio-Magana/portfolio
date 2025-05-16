@@ -1,7 +1,7 @@
-import Introduction from "../components/Introduction";
-import SkillGrid from "../components/SkillGrid";
-import Experience from "../components/Experience";
-import FeaturedProjects from "../components/FeaturedProjects";
+import Introduction from "@/ui/Introduction";
+import SkillGrid from "@/ui/SkillGrid";
+import Experience from "@/components/Experience";
+import FeaturedProjects from "@/ui/FeaturedProjects";
 
 export default function Homepage() {
   return (

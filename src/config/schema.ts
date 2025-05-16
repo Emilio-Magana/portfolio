@@ -41,11 +41,11 @@ const hobbySchema = z.object({ hobbies: z.array(hobby) });
 
 type IconLink = z.infer<typeof social>;
 type Skill = z.infer<typeof skill>;
-type Project = z.infer<typeof project>;
+type Showcase = z.infer<typeof project>;
 type Experience = z.infer<typeof experience>;
 type Hobby = z.infer<typeof hobby>;
 
-export type { Project, Experience, IconLink, Skill, Hobby };
+export type { Showcase, Experience, IconLink, Skill, Hobby };
 export {
   projectSchema,
   careerSchema,

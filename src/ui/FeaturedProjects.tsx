@@ -1,7 +1,7 @@
-import ProjectCard from "./ProjectCard";
 import { projectSchema } from "../config/schema";
 import projectData from "../data/projects.json";
 import Link from "next/link";
+import ShowcaseCard from "@/ui/ShowcaseCard";
 
 const projects = projectSchema.parse(projectData).projects;
 
@@ -23,7 +23,7 @@ export default function FeaturedProjects() {
 
       <div className="grid gap-3 place-self-center ipad_mini:grid-cols-2">
         {projects.map((skill, key) => (
-          <ProjectCard {...skill} key={key} />
+          <ShowcaseCard {...skill} key={key} />
         ))}
       </div>
     </section>

@@ -5,7 +5,7 @@
 
 // const skills = skillSchema.parse(skillData).skills;
 
-// function SkillGrid() {
+// export default  function SkillGrid() {
 //   return (
 //     <section
 //       className="my-8 grid w-full animate-fade-in-up cursor-[url(/circle-outline.svg)_12_24,_auto] grid-cols-4 gap-1 place-self-center bg-transparent px-1 opacity-0"
@@ -17,8 +17,6 @@
 //     </section>
 //   );
 // }
-
-// export default SkillGrid;
 
 import {
   SiTailwindcss,
@@ -81,7 +79,7 @@ function SKillCard({ name, size }: Skill) {
   );
 }
 
-function SkillGrid() {
+export default function SkillGrid() {
   return (
     <section className={sectionStyle} style={{ animationDelay: "0.3s" }}>
       {skillData.skills.map((skill, key) => (
@@ -90,5 +88,3 @@ function SkillGrid() {
     </section>
   );
 }
-
-export default SkillGrid;

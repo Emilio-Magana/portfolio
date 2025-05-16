@@ -4,7 +4,7 @@
       "name": "Oregon State University",
       "href": "https://oregonstate.edu/",
       "title": "Bachelor of Science in Electrical and Computer Engineering",
-      "logo": "OSU",
+      "logo": "./OSU-logo.png",
       "start": "Sep 2017",
       "end": "June 2021",
       "description": [

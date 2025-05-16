@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/ui/Footer";
+import Header from "@/ui/Header";
 import Chatbot from "@/components/Chatbot/Chat";
 import ParticleAnimation from "@/animation/ParticleAnimation";
 import Providers from "@/components/Providers";
@@ -21,7 +21,6 @@ export default function RootLayout({
       <head>
         <title>Emilio's Crag</title>
         <meta name="description" content="Portfolio Website!" />
-        {/* <ThemeScript /> */}
       </head>
       <body>
         <Providers>

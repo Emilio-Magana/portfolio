@@ -12,11 +12,9 @@ import {
   SiExpress,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
+import { SlGlobeAlt } from "react-icons/sl";
 
-const Icons = {
-  LinkedIn: SiLinkedin,
-  GitHub: SiGithub,
-  Email: MdEmail,
+const technicalIcons = {
   TailwindCSS: SiTailwindcss,
   TypeScript: SiTypescript,
   Python: SiPython,
@@ -28,5 +26,14 @@ const Icons = {
   Supabase: SiSupabase,
   Express: SiExpress,
 };
+const socialIcons = {
+  LinkedIn: SiLinkedin,
+  GitHub: SiGithub,
+  Email: MdEmail,
+};
+const sourceIcons = {
+  Website: SlGlobeAlt,
+  Source: SiGithub,
+};
 
-export { Icons };
+export { sourceIcons, socialIcons, technicalIcons };
