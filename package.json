@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "gen": "npx tsx ./scripts/generate.ts",
-    "build": "npm run gen && next build ",
+    "build-first-deployment": "npm run gen && next build ",
+    "build": "next build ",
     "start": "next start",
     "lint": "next lint ."
   },

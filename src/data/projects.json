@@ -20,6 +20,32 @@
       ]
     },
     {
+      "name": "Wild Oasis Booking",
+      "description": "Booking Website that acts as an AirBnb mimic, with user authentication, and all data regarding: guests, bookings, lodgings, and authenticated users stored using Supabase",
+      "image": "/wildOasisDarkSnippet.png",
+      "imageAlt": "/wildOasisLightSnippet.png",
+      "tags": [
+        "JavaScript",
+        "ReactJs",
+        "styled-components",
+        "React Router",
+        "TanStack",
+        "Supabase"
+      ],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/Emilio-Magana/WildOasis",
+          "size": "xsmall"
+        },
+        {
+          "name": "Website",
+          "href": "https://wildoasisbooking.netlify.app/",
+          "size": "xsmall"
+        }
+      ]
+    },
+    {
       "name": "High Voltage Peripherals",
       "description": "Capstone Project was done with the Global Formula Racing (GFR) Team at Oregon State, a International Formula Student team in conjunction with DHBW Ravensburg, as part of the ePowertrain sub-team. Designed and Functionally tested the DC-Link (DCL) and Brake System Plausibility Device (BSPD) for both FS and FSAE 2021 Competitions.",
       "image": "/GFR-logo.png",
