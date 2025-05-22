@@ -21,7 +21,7 @@
     },
     {
       "name": "Wild Oasis Booking",
-      "description": "Booking Website that acts as an AirBnb mimic, with user authentication, and all data regarding: guests, bookings, lodgings, and authenticated users stored using Supabase",
+      "description": "Booking Website that acts as an AirBnb clone, with user authentication, and all data regarding: guests, bookings, lodgings, and authenticated users stored using Supabase",
       "image": "/wildOasisDarkSnippet.png",
       "imageAlt": "/wildOasisLightSnippet.png",
       "tags": [

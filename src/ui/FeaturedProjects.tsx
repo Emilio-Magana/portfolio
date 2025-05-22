@@ -4,9 +4,10 @@ import Link from "next/link";
 import ShowcaseCard from "@/ui/ShowcaseCard";
 
 let projects = projectSchema.parse(projectData).projects;
+const FEATURED_PROJECT_LIMIT = 2;
 
 export default function FeaturedProjects() {
-  projects = projects.slice(0, 2);
+  projects = projects.slice(0, FEATURED_PROJECT_LIMIT);
   return (
     <section
       className="my-8 animate-fade-in-up px-1 opacity-0"
