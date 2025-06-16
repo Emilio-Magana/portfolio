@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Portfolio Website",
-      "description": "Website designed using Next.js to self-introduce and be a root to all socials and future projects.",
+      "description": "Website designed using Next.js to self-introduce and be a root to all socials and future projects. Developed a RAG Chatbot using OpenAI as its model provider, Astra DB for embeddings, and Upstash Redis for caching.",
       "image": "/websiteDarkSnippet.png",
       "imageAlt": "/websiteLightSnippet.png",
       "tags": ["TypeScript", "ReactJs", "TailwindCSS", "NextJs"],
