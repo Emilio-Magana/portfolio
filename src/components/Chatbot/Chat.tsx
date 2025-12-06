@@ -2,7 +2,7 @@
 import { useChatBot } from "../../context/ChatContext";
 import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";
-import Accordion from "../../ui/Accordion";
+import Accordion from "../Accordion";
 import { useChat } from "ai/react";
 
 export default function Chat() {

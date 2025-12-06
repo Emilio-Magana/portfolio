@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 
-interface AccordionParentProps {
+interface AccordionProps {
   children: React.ReactNode;
 }
 interface TitleProps {
@@ -12,7 +12,7 @@ interface TitleProps {
   isOpen: boolean;
 }
 
-export default function Accordion({ children }: AccordionParentProps) {
+export default function Accordion({ children }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

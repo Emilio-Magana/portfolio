@@ -43,9 +43,15 @@ export default function Privacy() {
           Here&apos;s what I might do with any information I collect:
         </p>
         <ul>
-          <li>Make sure the site is running smoothly</li>
-          <li>Improve the website based on feedback you might share</li>
-          <li>Respond to your questions or feedback</li>
+          <li className="before:mr-2 before:text-blue-500 before:content-['\2192\00a0']">
+            Make sure the site is running smoothly
+          </li>
+          <li className="before:mr-2 before:text-blue-500 before:content-['\2192\00a0']">
+            Improve the website based on feedback you might share
+          </li>
+          <li className="before:mr-2 before:text-blue-500 before:content-['\2192\00a0']">
+            Respond to your questions or feedback
+          </li>
         </ul>
         <h2 className="font-serif text-3xl tracking-wide text-primary">
           Security (The Internet Isn&apos;t Perfect)
@@ -66,9 +72,6 @@ export default function Privacy() {
             magana.emil.a@gmail.com.{" "}
           </Link>
           I&apos;d love to hear from you!
-        </p>
-        <p className="font-bold text-primary">
-          This policy is current as of {lastUpdated}
         </p>
       </div>
     </article>

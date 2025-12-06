@@ -1,5 +1,5 @@
 import socialData from "../data/socials.json";
-import IconButtonOverflow from "./IconButtonOverflow";
+import IconButtonOverflow from "./../components/IconButtonOverflow";
 import { socialSchema, IconLink } from "../config/schema";
 import { iconSizeMap } from "../config/sizes";
 import { socialIcons } from "@/config/icons";

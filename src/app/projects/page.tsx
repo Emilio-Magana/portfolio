@@ -11,7 +11,7 @@ const projects = projectSchema.parse(projectData).projects;
 export default function Projects() {
   return (
     <section className="my-8 px-1">
-      <h1 className="font-mono text-3xl text-primary">my projects.</h1>
+      <h1 className="font-mono text-3xl text-primary">myProjects.</h1>
       <div
         className="grid animate-fade-in-up place-self-center opacity-0"
         style={{ animationDelay: "0.1s" }}

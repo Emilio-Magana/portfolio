@@ -1,4 +1,4 @@
-import Socials from "@/components/Socials";
+import Socials from "@/ui/Socials";
 import { FaFileDownload } from "react-icons/fa";
 import { CgArrowsExpandDownRight } from "react-icons/cg";
 
