@@ -3,7 +3,7 @@
     {
       "name": "yourGuide",
       "description": "A Tour Booking wesbite, giving users the ability to book tours from all over the world.",
-      "image": "/tourPageDark.png",
+      "image": "/toursPageDark.png",
       "imageAlt": "/tourPageLight.png",
       "tags": [
         "TypeScript",
