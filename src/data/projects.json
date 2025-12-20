@@ -4,7 +4,7 @@
       "name": "yourGuide",
       "description": "A Tour Booking wesbite, giving users the ability to book tours from all over the world.",
       "image": "/toursPageDark.png",
-      "imageAlt": "/tourPageLight.png",
+      "imageAlt": "/toursPageLight.png",
       "tags": [
         "TypeScript",
         "ReactJs",
