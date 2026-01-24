@@ -31,9 +31,11 @@ export default function Introduction() {
             <p className="inline cursor-cell hover:animate-pulse">👋</p>
           </h1>
           <p className="mt-3 text-primary">
-            A {EMILIO_AGE} year old software developer from Oregon, in the
-            United States. I like to develop fullstack, and spend my free time
-            at a local climbing gym or biking around town!
+            A {EMILIO_AGE} year old Electrical and Computer Engineer from
+            Oregon, in the United States. I like to develop problem solve,
+            develop work flows, and build fullstack applications. In my free
+            time you're likely to catch me cycling around town and at a local
+            climbing gym!
           </p>
           <br />
           <p>
