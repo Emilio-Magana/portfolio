@@ -1,9 +1,14 @@
 {
   "skills": [
     {
-      "name": "TailwindCSS",
+      "name": "CPP",
       "hover_color": "hover:text-cyan-400",
       "size": "medium"
+    },
+    {
+      "name": "Verilog",
+      "hover_color": "hover:text-[#264de4]",
+      "size": "small"
     },
     {
       "name": "TypeScript",
@@ -21,23 +26,18 @@
       "size": "small"
     },
     {
-      "name": "CSS",
-      "hover_color": "hover:text-[#264de4]",
-      "size": "small"
-    },
-    {
       "name": "NextJs",
       "hover_color": "",
       "size": "medium"
     },
     {
-      "name": "R",
-      "hover_color": "hover:text-blue-300",
+      "name": "PostgreSQL",
+      "hover_color": "hover:text-[#336791]",
       "size": "small"
     },
     {
-      "name": "Supabase",
-      "hover_color": "hover:text-green-500",
+      "name": "R",
+      "hover_color": "hover:text-blue-300",
       "size": "small"
     }
   ]

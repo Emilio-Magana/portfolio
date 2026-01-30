@@ -1,26 +1,27 @@
-import { SiLinkedin, SiGithub } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
 import {
-  SiTailwindcss,
   SiTypescript,
   SiPython,
   SiReact,
-  SiCss3,
-  SiSupabase,
   SiR,
+  SiLinkedin,
+  SiGithub,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { SlGlobeAlt } from "react-icons/sl";
+import { PiFileCppFill } from "react-icons/pi";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { IoHardwareChip } from "react-icons/io5";
 
 const technicalIcons = {
-  TailwindCSS: SiTailwindcss,
+  CPP: PiFileCppFill,
+  Verilog: IoHardwareChip,
   TypeScript: SiTypescript,
   Python: SiPython,
   ReactJs: SiReact,
   NextJs: RiNextjsFill,
-  CSS: SiCss3,
+  PostgreSQL: BiLogoPostgresql,
   R: SiR,
-  Supabase: SiSupabase,
 };
 const socialIcons = {
   LinkedIn: SiLinkedin,

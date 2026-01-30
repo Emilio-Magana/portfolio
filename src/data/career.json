@@ -8,10 +8,12 @@
       "start": "Oct 2021",
       "end": "Jan 2024",
       "description": [
-        "Main role consisted of validating and characterizing IP.",
-        "Wrote documentation of methodology for both validation and characterization.",
-        "Worked with customer issues/JIRA (internal and external) in providing solutions and data.",
-        "Small Projects involving: BSCAN/JTAG, Thermal Studies."
+        "Led validation and characterization of FPGA IP (I/O interfaces, PLLs, Oscillators) ensuring compliance with design specifications.",
+        "Wrote comprehensive technical documentation for validation and characterization methodologies.",
+        "Developed behavioral code using Verilog for which to validate IP.",
+        "Managed end-to-end bench operations from initial bring-up to full automatization using Python, ensuring reliability.",
+        "Created data visualizations comparing specification targets against performance metrics using R, informing product decisions.",
+        "Collaborated with cross-functional teams (sales, engineering, customers) to resolve technical issues via JIRA, translating complex technical concepts for diverse audiences."
       ]
     },
     {
@@ -22,7 +24,8 @@
       "start": "Jan 2019",
       "end": "Mar 2019",
       "description": [
-        "Coordinated lab sessions for ECE 112: Introduction to Electrical and Computer Engineering."
+        "Lead lab sessions for Introduction to Electrical and Computer Engineering.",
+        "Hosted office hours for students seeking assistance surrounding labs and class material."
       ]
     }
   ]

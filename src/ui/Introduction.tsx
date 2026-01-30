@@ -32,10 +32,9 @@ export default function Introduction() {
           </h1>
           <p className="mt-3 text-primary">
             A {EMILIO_AGE} year old Electrical and Computer Engineer from
-            Oregon, in the United States. I like to develop problem solve,
-            develop work flows, and build fullstack applications. In my free
-            time you're likely to catch me cycling around town and at a local
-            climbing gym!
+            Oregon, in the United States. I like to problem solve, develop work
+            flows, and build fullstack applications. In my free time you're
+            likely to catch me cycling around town and at a local climbing gym!
           </p>
           <br />
           <p>

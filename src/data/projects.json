@@ -46,14 +46,14 @@
       ]
     },
     {
-      "name": "Wild Oasis Booking",
+      "name": "yourGetAway",
       "description": "Booking Website that acts as an AirBnb clone, with user authentication, and all data regarding: guests, bookings, lodgings, and authenticated users stored using Supabase",
       "image": "/wildOasisDarkSnippet.png",
       "imageAlt": "/wildOasisLightSnippet.png",
       "tags": [
-        "JavaScript",
+        "Typescript",
         "ReactJs",
-        "styled-components",
+        "TailwindCSS",
         "React Router",
         "TanStack",
         "Supabase"
@@ -61,12 +61,12 @@
       "links": [
         {
           "name": "Source",
-          "href": "https://github.com/Emilio-Magana/WildOasis",
+          "href": "https://github.com/Emilio-Magana/yourGetAway",
           "size": "xsmall"
         },
         {
           "name": "Website",
-          "href": "https://wildoasisbooking.netlify.app/",
+          "href": "https://yourgetaway.netlify.app/login",
           "size": "xsmall"
         }
       ]
